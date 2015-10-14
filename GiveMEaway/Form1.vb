@@ -34,6 +34,7 @@
     ' aviablekeys = Textbox mit allen Keys
     ' keybox = Eingabefeld für neue Keys
     '
+    '
     ' Beim Starten Hinweis ausführen
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         MsgBox("Changelog #2" & vbNewLine & "" & vbNewLine & "- Fehlermeldung beim Klick auf 'Play Sound' behoben" & vbNewLine & "" & vbNewLine & "- Updater hinzugefügt" & vbNewLine & "- Der 'useless' Button heißt nun 'Play Sound'-Button, ay!", MsgBoxStyle.Information, "GiveMEAway - Willkommen! :)")

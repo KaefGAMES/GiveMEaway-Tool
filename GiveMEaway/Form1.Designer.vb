@@ -32,6 +32,7 @@ Partial Class Form1
         Me.remkey = New System.Windows.Forms.Button()
         Me.keynr = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
+        Me.version = New System.Windows.Forms.Label()
         Me.gversion = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
@@ -119,14 +120,24 @@ Partial Class Form1
         Me.Label3.TabIndex = 10
         Me.Label3.Text = "Key # angeben:"
         '
+        'version
+        '
+        Me.version.AutoSize = True
+        Me.version.Location = New System.Drawing.Point(275, 152)
+        Me.version.Name = "version"
+        Me.version.Size = New System.Drawing.Size(154, 13)
+        Me.version.TabIndex = 11
+        Me.version.Text = "Version 0.0.3 - Stable Any CPU"
+        '
         'gversion
         '
         Me.gversion.AutoSize = True
-        Me.gversion.Location = New System.Drawing.Point(275, 152)
+        Me.gversion.Location = New System.Drawing.Point(398, 9)
         Me.gversion.Name = "gversion"
-        Me.gversion.Size = New System.Drawing.Size(154, 13)
-        Me.gversion.TabIndex = 11
-        Me.gversion.Text = "Version 0.0.3 - Stable Any CPU"
+        Me.gversion.Size = New System.Drawing.Size(31, 13)
+        Me.gversion.TabIndex = 12
+        Me.gversion.Text = "0.0.3"
+        Me.gversion.Visible = False
         '
         'Form1
         '
@@ -135,6 +146,7 @@ Partial Class Form1
         Me.BackColor = System.Drawing.SystemColors.Control
         Me.ClientSize = New System.Drawing.Size(441, 502)
         Me.Controls.Add(Me.gversion)
+        Me.Controls.Add(Me.version)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.keynr)
         Me.Controls.Add(Me.remkey)
@@ -165,5 +177,6 @@ Partial Class Form1
     Friend WithEvents remkey As Button
     Friend WithEvents keynr As TextBox
     Friend WithEvents Label3 As Label
+    Friend WithEvents version As Label
     Friend WithEvents gversion As Label
 End Class

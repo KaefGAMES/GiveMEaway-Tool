@@ -37,8 +37,17 @@
     ' keybox = Eingabefeld für neue Keys
     '
     '
-    ' Beim Starten Hinweis ausführen
+    ' Beim Starten Hinweise ausführen
+    '
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        '
+        ' Prüft vor beginn nach vorhandenen Updates!
+        '
+        TestInternetConnection()
+        RunUpdate()
+        '
+        ' Startet normal weiter, wenn keine Updates vorhanden sind.
+        '
         MsgBox("Changelog #2" & vbNewLine & "" & vbNewLine & "- Fehlermeldung beim Klick auf 'Play Sound' behoben" & vbNewLine & "" & vbNewLine & "- Updater hinzugefügt" & vbNewLine & "- Der 'useless' Button heißt nun 'Play Sound'-Button, ay!", MsgBoxStyle.Information, "GiveMEAway - Willkommen! :)")
         MsgBox("Vielen Dank, dass du dich für unser kleines aber feines Tool zum Verwalten deiner GiveAway Keys entschieden hast." & vbNewLine & "" & vbNewLine & "Dieses Tool soll dich dabei unterstützen eine Liste von deinen Keys anzufertigen, für deinen aktuellen Livestream. Das Tool befindet sich noch in Entwicklung und Feedback ist gerne gesehen." & vbNewLine & "" & vbNewLine & "Besuche unsere Webseite für mehr Infos!" & vbNewLine & "www.kaefgames.de", MsgBoxStyle.Information, "GiveMEAway - Willkommen! :)")
         aviablekeys.Text = IO.File.ReadAllText(System.Environment.CurrentDirectory + "\keys.txt")
@@ -64,10 +73,12 @@
             Return True
         End Try
     End Function
+    '
     ' Testet vor dem Start des Updates dank der Funktion "TestInternetConnection()" ob Internet verfügbar ist
     ' Beginnt dann damit die Versionsnummer vom Webserver auszulesen und wenn diese größer ist als unsere jetzige,
     ' in der Software gespeicherte, Versionsnummer dann startet die geplante GiveMEupdate.exe während sich
     ' GiveMEaway.exe für den Updateprozess schließt um diesen nicht zu verhindern. Easy Peasy!
+    '
     Sub RunUpdate()
         If TestInternetConnection() = True Then
             Try

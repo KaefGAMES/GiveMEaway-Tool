@@ -1,0 +1,16 @@
+﻿Füge deine Keys Zeile für Zeile in diese .txt Datei ein!
+
+Die Software liest bei jedem Start diese Datei aus und zeigt dir somit deine eingefügten Keys an.
+
+Keys können aktuell leider (noch nicht) über die Software in diese Datei geschrieben werden.
+Keys können aktuell leider (noch nicht) über die Software aus dieser Datei entfernt werden.
+
+Behalte die offiziellen Quellen im Auge um über Updates informiert zu bleiben.
+
+
+
+Cheers,
+Maximilian Wolf "Wolfi"
+CEO KaefGAMES Entertainment
+-------------
+Der Inhalt dieser Textdatei darf gelöscht werden. ;)

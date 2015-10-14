@@ -12,6 +12,7 @@ Visual Basic hat es bereits im Namen. Es ist die Basis der Basis, einfach zu ler
 
 # Was kann das Tool bisher?
 - Neue Keys (temporär) hinzufügen in eine geordnete Liste von Oben nach Unten.
+- Vorhandene Keys in der "keys.txt" beim Starten auslesen und anzeigen...immerhin! :)
 - Einen vom Nutzer festgelegten Sound abspielen. Hey! So könnt Ihr wenigstens die Giveaways noch Musikalisch untermauern...
 
 # Was ist geplant?

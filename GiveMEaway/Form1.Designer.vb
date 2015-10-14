@@ -23,26 +23,26 @@ Partial Class Form1
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
-        Me.chooserandom = New System.Windows.Forms.Button()
+        Me.playsound = New System.Windows.Forms.Button()
         Me.keybox = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.addkey = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.aviablekeys = New System.Windows.Forms.RichTextBox()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.remkey = New System.Windows.Forms.Button()
         Me.keynr = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.gversion = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
-        'chooserandom
+        'playsound
         '
-        Me.chooserandom.Location = New System.Drawing.Point(287, 120)
-        Me.chooserandom.Name = "chooserandom"
-        Me.chooserandom.Size = New System.Drawing.Size(128, 24)
-        Me.chooserandom.TabIndex = 0
-        Me.chooserandom.Text = "Play Sound :3"
-        Me.chooserandom.UseVisualStyleBackColor = True
+        Me.playsound.Location = New System.Drawing.Point(287, 120)
+        Me.playsound.Name = "playsound"
+        Me.playsound.Size = New System.Drawing.Size(128, 24)
+        Me.playsound.TabIndex = 0
+        Me.playsound.Text = "Play Sound :3"
+        Me.playsound.UseVisualStyleBackColor = True
         '
         'keybox
         '
@@ -93,14 +93,14 @@ Partial Class Form1
         Me.aviablekeys.TabIndex = 7
         Me.aviablekeys.Text = ""
         '
-        'Button1
+        'remkey
         '
-        Me.Button1.Location = New System.Drawing.Point(13, 70)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(127, 38)
-        Me.Button1.TabIndex = 8
-        Me.Button1.Text = "Key entfernen"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.remkey.Location = New System.Drawing.Point(13, 70)
+        Me.remkey.Name = "remkey"
+        Me.remkey.Size = New System.Drawing.Size(127, 38)
+        Me.remkey.TabIndex = 8
+        Me.remkey.Text = "Key entfernen"
+        Me.remkey.UseVisualStyleBackColor = True
         '
         'keynr
         '
@@ -137,13 +137,13 @@ Partial Class Form1
         Me.Controls.Add(Me.gversion)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.keynr)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.remkey)
         Me.Controls.Add(Me.aviablekeys)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.addkey)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.keybox)
-        Me.Controls.Add(Me.chooserandom)
+        Me.Controls.Add(Me.playsound)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.MaximumSize = New System.Drawing.Size(457, 541)
@@ -156,13 +156,13 @@ Partial Class Form1
 
     End Sub
 
-    Friend WithEvents chooserandom As Button
+    Friend WithEvents playsound As Button
     Friend WithEvents keybox As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents addkey As Button
     Friend WithEvents Label2 As Label
     Friend WithEvents aviablekeys As RichTextBox
-    Friend WithEvents Button1 As Button
+    Friend WithEvents remkey As Button
     Friend WithEvents keynr As TextBox
     Friend WithEvents Label3 As Label
     Friend WithEvents gversion As Label

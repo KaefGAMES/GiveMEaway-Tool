@@ -29,8 +29,10 @@
     '
     '
     ' Deklaration
-    ' addkey = Neuen Key hinzufügen (Button)
+    ' addkey = Neuen Key hinzufügen
+    ' remkey = Key durch Zeilenangabe löschen (N/A)
     ' chooserandom = Wählt einen zufälligen Key aus (N/A)
+    ' playsound = Button der den Sound abspielt...*whoa*
     ' aviablekeys = Textbox mit allen Keys
     ' keybox = Eingabefeld für neue Keys
     '
@@ -82,11 +84,11 @@
     '
     '
     '
-    Private Sub chooserandom_Click(sender As Object, e As EventArgs) Handles chooserandom.Click
+    Private Sub playsound_Click(sender As Object, e As EventArgs) Handles playsound.Click
         My.Computer.Audio.Play(System.Environment.CurrentDirectory + "\Sounds\justfun\default.wav", AudioPlayMode.Background)
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub remkey_Click(sender As Object, e As EventArgs) Handles remkey.Click
         aviablekeys.Text &= Environment.NewLine + "#" + "#" + "#" & "NOT YET AVIABLE" + "#" + "#" + "#"
     End Sub
 End Class

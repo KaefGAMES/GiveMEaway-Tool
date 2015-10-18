@@ -107,7 +107,7 @@ Partial Class gaway
         '
         Me.keynr.Location = New System.Drawing.Point(145, 80)
         Me.keynr.Name = "keynr"
-        Me.keynr.Size = New System.Drawing.Size(55, 20)
+        Me.keynr.Size = New System.Drawing.Size(129, 20)
         Me.keynr.TabIndex = 9
         Me.keynr.Visible = False
         Me.keynr.WordWrap = False
@@ -117,9 +117,9 @@ Partial Class gaway
         Me.Label3.AutoSize = True
         Me.Label3.Location = New System.Drawing.Point(146, 64)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(78, 13)
+        Me.Label3.Size = New System.Drawing.Size(121, 13)
         Me.Label3.TabIndex = 10
-        Me.Label3.Text = "Zeile angeben:"
+        Me.Label3.Text = "Zeile als Ziffer angeben:"
         Me.Label3.Visible = False
         '
         'version
@@ -131,7 +131,7 @@ Partial Class gaway
         Me.version.TabIndex = 11
         Me.version.Text = "Version 0.0.4 - Stable Any CPU"
         '
-        'Form1
+        'gaway
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -151,7 +151,7 @@ Partial Class gaway
         Me.MaximizeBox = False
         Me.MaximumSize = New System.Drawing.Size(457, 541)
         Me.MinimumSize = New System.Drawing.Size(457, 541)
-        Me.Name = "Form1"
+        Me.Name = "gaway"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "GiveMEaway-Tool by KaefGAMES-Entertainment"
         Me.ResumeLayout(False)

@@ -44,7 +44,7 @@
     '
     ' Beim Starten Hinweise ausführen
     '
-    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub gaway_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         '
         ' Prüft vor beginn nach vorhandenen Updates!
         '
@@ -90,7 +90,6 @@
 
                 If version > CInt(gawayversion) Then
                     Process.Start("GiveMEupdate.exe")
-                    Me.Close()
                 End If
             Catch ex As Exception
                 MsgBox(ex.ToString)
@@ -98,7 +97,7 @@
         End If
     End Sub
     '
-    ' Fügt eine neue Zeile (temporär) zur Liste hinzu. Das Ziel hier ist es, die Zeile später in die keys.txt zu schreiben...
+    ' Fügt eine neue Zeile zur Liste hinzu.
     '
     Private Sub addkey_Click(sender As Object, e As EventArgs) Handles addkey.Click
         ' Inhalt und Ausgabedatei als String für IO.File.WriteAllText
@@ -111,12 +110,29 @@
     ' Spielt den mitgelieferten Sound ab. Sounddatei kann und sollte angepasst werden...es sei denn man mag den Sound! Dann sollte hier nix geändert werden. ;)
     '
     Private Sub playsound_Click(sender As Object, e As EventArgs) Handles playsound.Click
-        My.Computer.Audio.Play(Environment.CurrentDirectory + "\Sounds\justfun\Default.wav", AudioPlayMode.Background)
+        My.Computer.Audio.Play(Environment.CurrentDirectory + "\Sounds\default.wav", AudioPlayMode.Background)
     End Sub
     '
-    ' Steht ja da! Löscht allerdings später die Keys aus der keys.txt
+    ' Das Ganze muss ich nochma überarbeiten...irgendetwas stimmt da noch ned so ganz. :(
+    ' Es funktioniert außerdem noch nicht!!!
+    '
+    ' Buttons usw. erst wieder sichtbar, wenn Funktion gegeben.
     '
     Private Sub remkey_Click(sender As Object, e As EventArgs) Handles remkey.Click
-        aviablekeys.Text &= Environment.NewLine + "#" + "#" + "#" & "Not YET AVIABLE" + "#" + "#" + "#"
+        '
+        ' Legt den Pfad zur Datei fest und setzt den Inhalt als Liste
+        '
+        Dim inputFile As String = Environment.CurrentDirectory + "\keys.txt"
+        Dim linesList As New List(Of String)(IO.File.ReadAllLines(Environment.CurrentDirectory + "\keys.txt"))
+        '
+        ' Prüft ob die Zeile einen Inhalt hat
+        '
+        If keynr.Text = "" Then
+            MsgBox("Bitte trage einen Wert von mindestens 1 in das Textfeld ein", MsgBoxStyle.Critical, "ACHTUNG: Feld darf nicht leer bleiben!")
+        End If
+        '
+        ' Löscht angegebene Zeile heraus und speichert die Datei anschließend wieder
+        '
+        IO.File.WriteAllText(inputFile, aviablekeys.Text) 
     End Sub
 End Class

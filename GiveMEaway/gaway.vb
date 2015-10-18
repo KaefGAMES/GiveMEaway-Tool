@@ -1,4 +1,4 @@
-﻿Public Class Form1
+﻿Public Class gaway
     '                               __
     '                             .d$$b		          _..::::::.._
     '                           .' TO$;\		    .::::::::::::::.
@@ -35,7 +35,12 @@
     ' playsound = Button der den Sound abspielt...*whoa*
     ' aviablekeys = Textbox mit allen Keys
     ' keybox = Eingabefeld für neue Keys
+    ' gversion = Versionsnummer welche vom Webserver überprüft wird z.B. 0.0.1, 0.0.2 usw.
     '
+    '
+    ' Versionsnummer für den Versionscheck
+    '
+    Dim gawayversion As String = "0.0.4"
     '
     ' Beim Starten Hinweise ausführen
     '
@@ -48,15 +53,14 @@
         '
         ' Startet normal weiter, wenn keine Updates vorhanden sind.
         '
-        MsgBox("Changelog #2" & vbNewLine & "" & vbNewLine & "- Fehlermeldung beim Klick auf 'Play Sound' behoben" & vbNewLine & "" & vbNewLine & "- Updater hinzugefügt" & vbNewLine & "- Der 'useless' Button heißt nun 'Play Sound'-Button, ay!", MsgBoxStyle.Information, "GiveMEAway - Willkommen! :)")
+        MsgBox("Changelog #4" & vbNewLine & "" & vbNewLine & "- Neue Keys werden jetzt in die Keys.txt geschrieben & gespeichert" & vbNewLine & "" & vbNewLine & "- Der Button für Key entfernen, die Textbox und die Bezeichnung sind vorerst nicht mehr sichtbar, bis die Funktion richtig funktioniert. :)", MsgBoxStyle.Information, "GiveMEAway - Willkommen! :)")
         MsgBox("Vielen Dank, dass du dich für unser kleines aber feines Tool zum Verwalten deiner GiveAway Keys entschieden hast." & vbNewLine & "" & vbNewLine & "Dieses Tool soll dich dabei unterstützen eine Liste von deinen Keys anzufertigen, für deinen aktuellen Livestream. Das Tool befindet sich noch in Entwicklung und Feedback ist gerne gesehen." & vbNewLine & "" & vbNewLine & "Besuche unsere Webseite für mehr Infos!" & vbNewLine & "www.kaefgames.de", MsgBoxStyle.Information, "GiveMEAway - Willkommen! :)")
         aviablekeys.Text = IO.File.ReadAllText(System.Environment.CurrentDirectory + "\keys.txt")
     End Sub
     '
     ' UPDATER AUSFÜHREN WENN NÖTIG
     '
-    Private Const targetURL = "http://www.kaefgames.de/gaway/GiveMEaway.exe"
-    Private Const versionURL = "http://www.kaefgames.de/gaway/current_ver.txt"
+    Private Const versionURL = "http://81.169.254.242/gaway/current_ver.txt"
 
     Dim Web As New Net.WebClient()
     '
@@ -84,7 +88,7 @@
             Try
                 Dim version As Integer = Web.DownloadString(New Uri(versionURL))
 
-                If version > CInt(gversion.Text) Then
+                If version > CInt(gawayversion) Then
                     Process.Start("GiveMEupdate.exe")
                     Me.Close()
                 End If
@@ -97,18 +101,22 @@
     ' Fügt eine neue Zeile (temporär) zur Liste hinzu. Das Ziel hier ist es, die Zeile später in die keys.txt zu schreiben...
     '
     Private Sub addkey_Click(sender As Object, e As EventArgs) Handles addkey.Click
-        aviablekeys.Text &= Environment.NewLine + "" + "+" + "" + " " + " " & keybox.Text
+        ' Inhalt und Ausgabedatei als String für IO.File.WriteAllText
+        Dim inputFile As String = Environment.CurrentDirectory + "\keys.txt"
+        aviablekeys.Text &= Environment.NewLine + "" + "" + "" + "" & keybox.Text
+        ' Speichere neuen Inhalt in die "keys.txt"
+        IO.File.WriteAllText(inputFile, aviablekeys.Text)
     End Sub
     '
     ' Spielt den mitgelieferten Sound ab. Sounddatei kann und sollte angepasst werden...es sei denn man mag den Sound! Dann sollte hier nix geändert werden. ;)
     '
     Private Sub playsound_Click(sender As Object, e As EventArgs) Handles playsound.Click
-        My.Computer.Audio.Play(System.Environment.CurrentDirectory + "\Sounds\justfun\default.wav", AudioPlayMode.Background)
+        My.Computer.Audio.Play(Environment.CurrentDirectory + "\Sounds\justfun\Default.wav", AudioPlayMode.Background)
     End Sub
     '
     ' Steht ja da! Löscht allerdings später die Keys aus der keys.txt
     '
     Private Sub remkey_Click(sender As Object, e As EventArgs) Handles remkey.Click
-        aviablekeys.Text &= Environment.NewLine + "#" + "#" + "#" & "NOT YET AVIABLE" + "#" + "#" + "#"
+        aviablekeys.Text &= Environment.NewLine + "#" + "#" + "#" & "Not YET AVIABLE" + "#" + "#" + "#"
     End Sub
 End Class

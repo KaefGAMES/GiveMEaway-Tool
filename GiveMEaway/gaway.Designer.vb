@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class Form1
+Partial Class gaway
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -22,7 +22,7 @@ Partial Class Form1
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(gaway))
         Me.playsound = New System.Windows.Forms.Button()
         Me.keybox = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -33,7 +33,6 @@ Partial Class Form1
         Me.keynr = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.version = New System.Windows.Forms.Label()
-        Me.gversion = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'playsound
@@ -102,6 +101,7 @@ Partial Class Form1
         Me.remkey.TabIndex = 8
         Me.remkey.Text = "Key entfernen"
         Me.remkey.UseVisualStyleBackColor = True
+        Me.remkey.Visible = False
         '
         'keynr
         '
@@ -109,6 +109,7 @@ Partial Class Form1
         Me.keynr.Name = "keynr"
         Me.keynr.Size = New System.Drawing.Size(55, 20)
         Me.keynr.TabIndex = 9
+        Me.keynr.Visible = False
         Me.keynr.WordWrap = False
         '
         'Label3
@@ -116,9 +117,10 @@ Partial Class Form1
         Me.Label3.AutoSize = True
         Me.Label3.Location = New System.Drawing.Point(146, 64)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(83, 13)
+        Me.Label3.Size = New System.Drawing.Size(78, 13)
         Me.Label3.TabIndex = 10
-        Me.Label3.Text = "Key # angeben:"
+        Me.Label3.Text = "Zeile angeben:"
+        Me.Label3.Visible = False
         '
         'version
         '
@@ -127,17 +129,7 @@ Partial Class Form1
         Me.version.Name = "version"
         Me.version.Size = New System.Drawing.Size(154, 13)
         Me.version.TabIndex = 11
-        Me.version.Text = "Version 0.0.3 - Stable Any CPU"
-        '
-        'gversion
-        '
-        Me.gversion.AutoSize = True
-        Me.gversion.Location = New System.Drawing.Point(398, 9)
-        Me.gversion.Name = "gversion"
-        Me.gversion.Size = New System.Drawing.Size(31, 13)
-        Me.gversion.TabIndex = 12
-        Me.gversion.Text = "0.0.3"
-        Me.gversion.Visible = False
+        Me.version.Text = "Version 0.0.4 - Stable Any CPU"
         '
         'Form1
         '
@@ -145,7 +137,6 @@ Partial Class Form1
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Control
         Me.ClientSize = New System.Drawing.Size(441, 502)
-        Me.Controls.Add(Me.gversion)
         Me.Controls.Add(Me.version)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.keynr)
@@ -178,5 +169,4 @@ Partial Class Form1
     Friend WithEvents keynr As TextBox
     Friend WithEvents Label3 As Label
     Friend WithEvents version As Label
-    Friend WithEvents gversion As Label
 End Class

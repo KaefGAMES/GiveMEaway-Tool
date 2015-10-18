@@ -10,7 +10,7 @@ www.kaefgames.de
 # Warum Visual Basic?
 Visual Basic hat es bereits im Namen. Es ist die Basis der Basis, einfach zu lernen und zu verstehen. Man braucht nur ein wenig Zeit, Geduld und kann sofort damit loslegen. Für andere Scriptsprachen bräuchten der Großteil aller Nutzer ggf. Jahre um diese im Ansatz zu verstehen. Visual Basic bietet somit also eine sichere Umgebung, auch für Anfänger.
 
-# Was kann das Tool bisher?
+# Was kann das Tool bisher? (Siehe dazu auch #TODO-LISTE)
 - Neue Keys hinzufügen und speichern in einer geordneten Liste von Oben nach Unten.
 - Bereits vorhandene Keys aus der "keys.txt" beim Starten auslesen und diese anzeigen...immerhin! :)
 - Einen vom Nutzer festgelegten Sound abspielen. Hey! So könnt Ihr wenigstens die Giveaways noch Musikalisch untermauern...

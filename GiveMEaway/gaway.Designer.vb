@@ -101,7 +101,6 @@ Partial Class gaway
         Me.remkey.TabIndex = 8
         Me.remkey.Text = "Key entfernen"
         Me.remkey.UseVisualStyleBackColor = True
-        Me.remkey.Visible = False
         '
         'Label3
         '
@@ -111,7 +110,6 @@ Partial Class gaway
         Me.Label3.Size = New System.Drawing.Size(87, 13)
         Me.Label3.TabIndex = 10
         Me.Label3.Text = "Zeile auswählen:"
-        Me.Label3.Visible = False
         '
         'version
         '
@@ -131,7 +129,6 @@ Partial Class gaway
         Me.keynr.ScrollAlwaysVisible = True
         Me.keynr.Size = New System.Drawing.Size(281, 30)
         Me.keynr.TabIndex = 12
-        Me.keynr.Visible = False
         '
         'gaway
         '

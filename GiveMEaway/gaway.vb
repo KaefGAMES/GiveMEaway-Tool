@@ -62,13 +62,13 @@
         '
         ' Lädt Liste mit dem Text aus der keys.txt beim Start , dies wird für den Löschprozess benötigt (N/A)
         '
-        'Dim loadfileforlist As IO.StreamReader
-        'loadfileforlist = IO.File.OpenText(Environment.CurrentDirectory + "\keys.txt")
-        'Dim loadlist() As String = loadfileforlist.ReadToEnd.Split(vbNewLine)
+        Dim loadfileforlist As IO.StreamReader
+        loadfileforlist = IO.File.OpenText(Environment.CurrentDirectory + "\keys.txt")
+        Dim loadlist() As String = loadfileforlist.ReadToEnd.Split(vbNewLine)
         '
         ' Erstellt die Auswahlliste
         '
-        'keynr.Items.AddRange(loadlist)
+        keynr.Items.AddRange(loadlist)
     End Sub
     '
     ' UPDATER AUSFÜHREN WENN NÖTIG

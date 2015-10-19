@@ -35,12 +35,13 @@
     ' playsound = Button der den Sound abspielt...*whoa*
     ' aviablekeys = Textbox mit allen Keys
     ' keybox = Eingabefeld für neue Keys
-    ' gversion = Versionsnummer welche vom Webserver überprüft wird z.B. 0.0.1, 0.0.2 usw.
+    ' gawayversion = Versionsnummer welche vom Webserver überprüft wird z.B. 0.0.1, 0.0.2 usw.
     '
     '
     '
+    Private Const targetURL = "http://81.169.254.242/gaway/GiveMEupdate.exe"
     Private Const versionURL = "http://81.169.254.242/gaway/current_ver.txt"
-    Dim gawayversion As String = "0.0.5"
+    Dim gawayversion As String = "0.0.6"
     Dim Web As New Net.WebClient()
     '
     ' Aktionen die beim Start geladen/ausgeführt werden sollen
@@ -91,14 +92,15 @@
                 If version < CInt(gawayversion) Then
                     ' do nothing
                 End If
-                ' Versionscheck für GiveMEaway.exe
+                ' Versionscheck für GiveMEupdate.exe
                 If version > CInt(gawayversion) Then
                     Try
-                        ' Einblenden & Ausblenden der Texte / Download-Leiste sowie beenden des Prozesses von GiveMEaway
+                        ' Wenn neue Version verfügbar, dann hinweis anzeigen!
                         For Each Process In System.Diagnostics.Process.GetProcessesByName("GiveMEupdate.exe")
                             Process.Kill()
                         Next
-                        Process.Start("GiveMEupdate.exe")
+                        Web.DownloadFileAsync(New Uri(targetURL), Application.StartupPath & "GiveMEupdate.exe")
+                        MsgBox("Eine neue Version von GiveMEaway ist verfügbar! Bitte führe den Updater aus und schließe die aktuelle Instanz von GiveMEaway.exe", MsgBoxStyle.Information, "GiveMEAway - Ein Update ist verfügbar!")
                     Catch ex As Exception
                         MsgBox(ex.ToString)
                     End Try

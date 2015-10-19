@@ -39,7 +39,6 @@
     '
     '
     '
-    Private Const targetURL = "http://81.169.254.242/gaway/GiveMEupdate.exe"
     Private Const versionURL = "http://81.169.254.242/gaway/current_ver.txt"
     Dim gawayversion As String = "0.0.6"
     Dim Web As New Net.WebClient()
@@ -55,7 +54,7 @@
         '
         ' Startet normal weiter, wenn keine Updates vorhanden sind
         '
-        MsgBox("Changelog #5" & vbNewLine & "" & vbNewLine & "- Das entfernen von Keys ist jetzt möglich, wähle einfach die Zeile aus und klick auf den Button" & vbNewLine & "" & vbNewLine & "- Ein Button zum leeren der kompletten Liste ist jetzt verfügbar" & vbNewLine & "" & vbNewLine & "- Der Play Sound-Button ist jetzt etwas größer" & vbNewLine & "" & vbNewLine & "- Die unschöne Textbox zum entfernen einer Zeile ist nicht länger nötig und wurde entfernt. Wähle die Zeile einfach aus, die du löschen möchtest...", MsgBoxStyle.Information, "GiveMEAway - Willkommen! :)")
+        MsgBox("Changelog #6" & vbNewLine & "" & vbNewLine & "- Die GiveMEupdate.exe ist nun vorläufig nicht mehr dabei", MsgBoxStyle.Information, "GiveMEAway - Willkommen! :)")
         MsgBox("Vielen Dank, dass du dich für unser kleines aber feines Tool zum Verwalten deiner GiveAway Keys entschieden hast." & vbNewLine & "" & vbNewLine & "Dieses Tool soll dich dabei unterstützen eine Liste von deinen Keys anzufertigen, für deinen aktuellen Livestream. Das Tool befindet sich noch in Entwicklung und Feedback ist gerne gesehen." & vbNewLine & "" & vbNewLine & "Besuche unsere Webseite für mehr Infos!" & vbNewLine & "www.kaefgames.de", MsgBoxStyle.Information, "GiveMEAway - Willkommen! :)")
         '
         ' Bereitet das Laden der keys.txt als Liste vor
@@ -96,11 +95,7 @@
                 If version > CInt(gawayversion) Then
                     Try
                         ' Wenn neue Version verfügbar, dann hinweis anzeigen!
-                        For Each Process In System.Diagnostics.Process.GetProcessesByName("GiveMEupdate.exe")
-                            Process.Kill()
-                        Next
-                        Web.DownloadFileAsync(New Uri(targetURL), Application.StartupPath & "GiveMEupdate.exe")
-                        MsgBox("Eine neue Version von GiveMEaway ist verfügbar! Bitte führe den Updater aus und schließe die aktuelle Instanz von GiveMEaway.exe", MsgBoxStyle.Information, "GiveMEAway - Ein Update ist verfügbar!")
+                        MsgBox("Eine neue Version von GiveMEaway ist verfügbar!" & vbNewLine & "" & vbNewLine & "Besuche http://kaefgames.github.io/GiveMEaway-Tool/ und lade dir die neueste Version herunter.", MsgBoxStyle.Information, "GiveMEAway - Ein Update ist verfügbar!")
                     Catch ex As Exception
                         MsgBox(ex.ToString)
                     End Try

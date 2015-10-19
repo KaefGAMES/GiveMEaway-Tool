@@ -65,6 +65,7 @@
         ' Erstellt die Auswahlliste
         '
         aviablekeys.Items.AddRange(loadlist)
+        loadfileforlist.Close()
     End Sub
     '
     ' UPDATER AUSFÜHREN WENN NÖTIG

@@ -52,6 +52,10 @@
         '
         TestInternetConnection()
         RunUpdate()
+        ' Prüft ob eine veraltete GiveMEupdate.exe vorhanden ist und löscht diese anschließend
+        If IO.File.Exists(Environment.CurrentDirectory + "\GiveMEupdate.exe") Then
+            IO.File.Delete(Environment.CurrentDirectory + "\GiveMEupdate.exe")
+        End If
         '
         ' Startet normal weiter, wenn keine Updates vorhanden sind
         '

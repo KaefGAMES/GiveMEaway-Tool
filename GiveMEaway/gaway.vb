@@ -38,13 +38,19 @@
     ' gversion = Versionsnummer welche vom Webserver überprüft wird z.B. 0.0.1, 0.0.2 usw.
     '
     '
+    '
+    Private Const versionURL = "http://81.169.254.242/gaway/current_ver.txt"
+    Dim gawayversion As String = "0.0.5"
+    Dim Web As New Net.WebClient()
+    '
     ' Aktionen die beim Start geladen/ausgeführt werden sollen
     '
     Private Sub gaway_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         '
         ' Prüft vor beginn nach vorhandenen Updates!
         '
-        Process.Start("GiveMEupdate.exe")
+        TestInternetConnection()
+        RunUpdate()
         '
         ' Startet normal weiter, wenn keine Updates vorhanden sind
         '
@@ -61,6 +67,46 @@
         '
         aviablekeys.Items.AddRange(loadlist)
         loadfileforlist.Close()
+    End Sub
+    Function TestInternetConnection()
+
+        Dim ping As New Net.NetworkInformation.Ping
+
+        Try
+            ping.Send("google.de")
+            Return True
+        Catch ex As Exception
+            Return True
+        End Try
+    End Function
+
+    Sub RunUpdate()
+        If TestInternetConnection() = True Then
+            Try
+                Dim version As Integer = Web.DownloadString(New Uri(versionURL))
+
+                If version = CInt(gawayversion) Then
+                    ' do nothing
+                End If
+                If version < CInt(gawayversion) Then
+                    ' do nothing
+                End If
+                ' Versionscheck für GiveMEaway.exe
+                If version > CInt(gawayversion) Then
+                    Try
+                        ' Einblenden & Ausblenden der Texte / Download-Leiste sowie beenden des Prozesses von GiveMEaway
+                        For Each Process In System.Diagnostics.Process.GetProcessesByName("GiveMEupdate.exe")
+                            Process.Kill()
+                        Next
+                        Process.Start("GiveMEupdate.exe")
+                    Catch ex As Exception
+                        MsgBox(ex.ToString)
+                    End Try
+                End If
+            Catch ex As Exception
+                MsgBox(ex.ToString)
+            End Try
+        End If
     End Sub
     '
     ' Fügt eine neue Zeile zur Liste hinzu.

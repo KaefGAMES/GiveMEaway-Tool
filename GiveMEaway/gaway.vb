@@ -132,6 +132,5 @@
         '
         ' Buttons usw. erst wieder sichtbar, wenn Funktion gegeben.
         '
-
     End Sub
 End Class

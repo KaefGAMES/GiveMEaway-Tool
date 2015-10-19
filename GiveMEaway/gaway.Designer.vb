@@ -28,18 +28,16 @@ Partial Class gaway
         Me.Label1 = New System.Windows.Forms.Label()
         Me.addkey = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.aviablekeys = New System.Windows.Forms.RichTextBox()
         Me.remkey = New System.Windows.Forms.Button()
-        Me.Label3 = New System.Windows.Forms.Label()
         Me.version = New System.Windows.Forms.Label()
-        Me.keynr = New System.Windows.Forms.ListBox()
+        Me.aviablekeys = New System.Windows.Forms.ListBox()
         Me.SuspendLayout()
         '
         'playsound
         '
-        Me.playsound.Location = New System.Drawing.Point(287, 120)
+        Me.playsound.Location = New System.Drawing.Point(301, 70)
         Me.playsound.Name = "playsound"
-        Me.playsound.Size = New System.Drawing.Size(128, 24)
+        Me.playsound.Size = New System.Drawing.Size(128, 38)
         Me.playsound.TabIndex = 0
         Me.playsound.Text = "Play Sound :3"
         Me.playsound.UseVisualStyleBackColor = True
@@ -78,21 +76,6 @@ Partial Class gaway
         Me.Label2.TabIndex = 6
         Me.Label2.Text = "Verfügbare Keys:"
         '
-        'aviablekeys
-        '
-        Me.aviablekeys.AcceptsTab = True
-        Me.aviablekeys.AutoWordSelection = True
-        Me.aviablekeys.DetectUrls = False
-        Me.aviablekeys.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.aviablekeys.Location = New System.Drawing.Point(12, 168)
-        Me.aviablekeys.Name = "aviablekeys"
-        Me.aviablekeys.ReadOnly = True
-        Me.aviablekeys.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedVertical
-        Me.aviablekeys.ShowSelectionMargin = True
-        Me.aviablekeys.Size = New System.Drawing.Size(417, 322)
-        Me.aviablekeys.TabIndex = 7
-        Me.aviablekeys.Text = ""
-        '
         'remkey
         '
         Me.remkey.Location = New System.Drawing.Point(13, 70)
@@ -101,15 +84,6 @@ Partial Class gaway
         Me.remkey.TabIndex = 8
         Me.remkey.Text = "Key entfernen"
         Me.remkey.UseVisualStyleBackColor = True
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(146, 64)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(87, 13)
-        Me.Label3.TabIndex = 10
-        Me.Label3.Text = "Zeile auswählen:"
         '
         'version
         '
@@ -120,15 +94,15 @@ Partial Class gaway
         Me.version.TabIndex = 11
         Me.version.Text = "Version 0.0.4 - Stable Any CPU"
         '
-        'keynr
+        'aviablekeys
         '
-        Me.keynr.FormattingEnabled = True
-        Me.keynr.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.keynr.Location = New System.Drawing.Point(148, 82)
-        Me.keynr.Name = "keynr"
-        Me.keynr.ScrollAlwaysVisible = True
-        Me.keynr.Size = New System.Drawing.Size(281, 30)
-        Me.keynr.TabIndex = 12
+        Me.aviablekeys.FormattingEnabled = True
+        Me.aviablekeys.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.aviablekeys.Location = New System.Drawing.Point(12, 181)
+        Me.aviablekeys.Name = "aviablekeys"
+        Me.aviablekeys.ScrollAlwaysVisible = True
+        Me.aviablekeys.Size = New System.Drawing.Size(417, 303)
+        Me.aviablekeys.TabIndex = 13
         '
         'gaway
         '
@@ -136,11 +110,9 @@ Partial Class gaway
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Control
         Me.ClientSize = New System.Drawing.Size(441, 502)
-        Me.Controls.Add(Me.keynr)
-        Me.Controls.Add(Me.version)
-        Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.remkey)
         Me.Controls.Add(Me.aviablekeys)
+        Me.Controls.Add(Me.version)
+        Me.Controls.Add(Me.remkey)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.addkey)
         Me.Controls.Add(Me.Label1)
@@ -163,9 +135,7 @@ Partial Class gaway
     Friend WithEvents Label1 As Label
     Friend WithEvents addkey As Button
     Friend WithEvents Label2 As Label
-    Friend WithEvents aviablekeys As RichTextBox
     Friend WithEvents remkey As Button
-    Friend WithEvents Label3 As Label
     Friend WithEvents version As Label
-    Friend WithEvents keynr As ListBox
+    Friend WithEvents aviablekeys As ListBox
 End Class

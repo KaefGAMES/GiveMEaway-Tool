@@ -56,11 +56,7 @@
         MsgBox("Changelog #4" & vbNewLine & "" & vbNewLine & "- Neue Keys werden jetzt in die Keys.txt geschrieben & gespeichert" & vbNewLine & "" & vbNewLine & "- Der Button für Key entfernen, die Textbox und die Bezeichnung sind vorerst nicht mehr sichtbar, bis die Funktion richtig funktioniert. :)", MsgBoxStyle.Information, "GiveMEAway - Willkommen! :)")
         MsgBox("Vielen Dank, dass du dich für unser kleines aber feines Tool zum Verwalten deiner GiveAway Keys entschieden hast." & vbNewLine & "" & vbNewLine & "Dieses Tool soll dich dabei unterstützen eine Liste von deinen Keys anzufertigen, für deinen aktuellen Livestream. Das Tool befindet sich noch in Entwicklung und Feedback ist gerne gesehen." & vbNewLine & "" & vbNewLine & "Besuche unsere Webseite für mehr Infos!" & vbNewLine & "www.kaefgames.de", MsgBoxStyle.Information, "GiveMEAway - Willkommen! :)")
         '
-        ' Lädt den Inhalt der keys.txt beim Start
-        '
-        aviablekeys.Text = IO.File.ReadAllText(Environment.CurrentDirectory + "\keys.txt")
-        '
-        ' Lädt Liste mit dem Text aus der keys.txt beim Start , dies wird für den Löschprozess benötigt (N/A)
+        ' Lädt Liste mit dem Text aus der keys.txt beim Start
         '
         Dim loadfileforlist As IO.StreamReader
         loadfileforlist = IO.File.OpenText(Environment.CurrentDirectory + "\keys.txt")
@@ -68,7 +64,7 @@
         '
         ' Erstellt die Auswahlliste
         '
-        keynr.Items.AddRange(loadlist)
+        aviablekeys.Items.AddRange(loadlist)
     End Sub
     '
     ' UPDATER AUSFÜHREN WENN NÖTIG
@@ -115,7 +111,7 @@
     Private Sub addkey_Click(sender As Object, e As EventArgs) Handles addkey.Click
         ' Inhalt und Ausgabedatei als String für IO.File.WriteAllText
         Dim inputFile As String = Environment.CurrentDirectory + "\keys.txt"
-        aviablekeys.Text &= Environment.NewLine + "" + "" + "" + "" & keybox.Text
+        aviablekeys.Items.Add(keybox.Text)
         ' Speichere neuen Inhalt in die "keys.txt"
         IO.File.WriteAllText(inputFile, aviablekeys.Text)
     End Sub
@@ -127,8 +123,10 @@
     End Sub
     Private Sub remkey_Click(sender As Object, e As EventArgs) Handles remkey.Click
         '
-        ' Das Ganze muss ich nochma überarbeiten...irgendetwas stimmt da noch ned so ganz. :(
-        ' Es funktioniert außerdem noch nicht!!!
+        ' Löscht Auswahl aus der Liste und aus der Textbox, speichert diese abschließend neu in der keys.txt
         '
+        Dim inputFile As String = Environment.CurrentDirectory + "\keys.txt"
+        aviablekeys.Items.Remove(aviablekeys.SelectedItem)
+        IO.File.WriteAllText(inputFile, aviablekeys.Text)
     End Sub
 End Class

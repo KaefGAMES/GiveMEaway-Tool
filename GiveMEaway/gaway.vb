@@ -36,6 +36,7 @@
     ' aviablekeys = Textbox mit allen Keys
     ' keybox = Eingabefeld für neue Keys
     ' gawayversion = Versionsnummer welche vom Webserver überprüft wird z.B. 0.0.1, 0.0.2 usw.
+    ' copytoclip = Auswahl in Zwischenablage kopieren (STRG + C)
     '
     '
     '
@@ -54,7 +55,7 @@
         '
         ' Startet normal weiter, wenn keine Updates vorhanden sind
         '
-        MsgBox("Changelog #6" & vbNewLine & "" & vbNewLine & "- Die GiveMEupdate.exe ist vorläufig nicht mehr dabei! Sollte eine ältere Version in deinem Verzeichnis liegen, lösche diese bitte.", MsgBoxStyle.Information, "GiveMEAway - Willkommen! :)")
+        MsgBox("Changelog #6" & vbNewLine & "" & vbNewLine & "- Die GiveMEupdate.exe ist vorläufig nicht mehr dabei! Sollte eine ältere Version in deinem Verzeichnis liegen, lösche diese bitte." & vbNewLine & "" & vbNewLine & "- Ein Button zum Kopieren des jeweils ausgewählten Keys ist jetzt verfügbar.", MsgBoxStyle.Information, "GiveMEAway - Willkommen! :)")
         MsgBox("Vielen Dank, dass du dich für unser kleines aber feines Tool zum Verwalten deiner GiveAway Keys entschieden hast." & vbNewLine & "" & vbNewLine & "Dieses Tool soll dich dabei unterstützen eine Liste von deinen Keys anzufertigen, für deinen aktuellen Livestream. Das Tool befindet sich noch in Entwicklung und Feedback ist gerne gesehen." & vbNewLine & "" & vbNewLine & "Besuche unsere Webseite für mehr Infos!" & vbNewLine & "www.kaefgames.de", MsgBoxStyle.Information, "GiveMEAway - Willkommen! :)")
         '
         ' Bereitet das Laden der keys.txt als Liste vor
@@ -139,7 +140,7 @@
         IO.File.WriteAllLines(inputFile, aviablekeys.Items.Cast(Of String).ToArray)
     End Sub
 
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+    Private Sub copytoclip_Click(sender As Object, e As EventArgs) Handles copytoclip.Click
         '
         ' Da normales Copy & Paste nicht funktioniert muss der Button geklickt werden. :3
         '

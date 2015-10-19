@@ -100,6 +100,7 @@
 
                 If version > CInt(gawayversion) Then
                     Process.Start("GiveMEupdate.exe")
+                    Me.Close()
                 End If
             Catch ex As Exception
                 MsgBox(ex.ToString)

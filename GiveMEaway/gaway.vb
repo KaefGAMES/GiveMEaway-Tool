@@ -51,11 +51,24 @@
         TestInternetConnection()
         RunUpdate()
         '
-        ' Startet normal weiter, wenn keine Updates vorhanden sind.
+        ' Startet normal weiter, wenn keine Updates vorhanden sind
         '
         MsgBox("Changelog #4" & vbNewLine & "" & vbNewLine & "- Neue Keys werden jetzt in die Keys.txt geschrieben & gespeichert" & vbNewLine & "" & vbNewLine & "- Der Button für Key entfernen, die Textbox und die Bezeichnung sind vorerst nicht mehr sichtbar, bis die Funktion richtig funktioniert. :)", MsgBoxStyle.Information, "GiveMEAway - Willkommen! :)")
         MsgBox("Vielen Dank, dass du dich für unser kleines aber feines Tool zum Verwalten deiner GiveAway Keys entschieden hast." & vbNewLine & "" & vbNewLine & "Dieses Tool soll dich dabei unterstützen eine Liste von deinen Keys anzufertigen, für deinen aktuellen Livestream. Das Tool befindet sich noch in Entwicklung und Feedback ist gerne gesehen." & vbNewLine & "" & vbNewLine & "Besuche unsere Webseite für mehr Infos!" & vbNewLine & "www.kaefgames.de", MsgBoxStyle.Information, "GiveMEAway - Willkommen! :)")
-        aviablekeys.Text = IO.File.ReadAllText(System.Environment.CurrentDirectory + "\keys.txt")
+        '
+        ' Lädt den Inhalt der keys.txt beim Start
+        '
+        aviablekeys.Text = IO.File.ReadAllText(Environment.CurrentDirectory + "\keys.txt")
+        '
+        ' Lädt Liste mit dem Text aus der keys.txt beim Start , dies wird für den Löschprozess benötigt (N/A)
+        '
+        'Dim loadfileforlist As IO.StreamReader
+        'loadfileforlist = IO.File.OpenText(Environment.CurrentDirectory + "\keys.txt")
+        'Dim loadlist() As String = loadfileforlist.ReadToEnd.Split(vbNewLine)
+        '
+        ' Erstellt die Auswahlliste
+        '
+        'keynr.Items.AddRange(loadlist)
     End Sub
     '
     ' UPDATER AUSFÜHREN WENN NÖTIG
@@ -112,27 +125,12 @@
     Private Sub playsound_Click(sender As Object, e As EventArgs) Handles playsound.Click
         My.Computer.Audio.Play(Environment.CurrentDirectory + "\Sounds\default.wav", AudioPlayMode.Background)
     End Sub
-    '
-    ' Das Ganze muss ich nochma überarbeiten...irgendetwas stimmt da noch ned so ganz. :(
-    ' Es funktioniert außerdem noch nicht!!!
-    '
-    ' Buttons usw. erst wieder sichtbar, wenn Funktion gegeben.
-    '
     Private Sub remkey_Click(sender As Object, e As EventArgs) Handles remkey.Click
         '
-        ' Legt den Pfad zur Datei fest und setzt den Inhalt als Liste
+        ' Das Ganze muss ich nochma überarbeiten...irgendetwas stimmt da noch ned so ganz. :(
+        ' Es funktioniert außerdem noch nicht!!!
         '
-        Dim inputFile As String = Environment.CurrentDirectory + "\keys.txt"
-        Dim linesList As New List(Of String)(IO.File.ReadAllLines(Environment.CurrentDirectory + "\keys.txt"))
+        ' Buttons usw. erst wieder sichtbar, wenn Funktion gegeben.
         '
-        ' Prüft ob die Zeile einen Inhalt hat
-        '
-        If keynr.Text = "" Then
-            MsgBox("Bitte trage einen Wert von mindestens 1 in das Textfeld ein", MsgBoxStyle.Critical, "ACHTUNG: Feld darf nicht leer bleiben!")
-        End If
-        '
-        ' Löscht angegebene Zeile heraus und speichert die Datei anschließend wieder
-        '
-        IO.File.WriteAllText(inputFile, aviablekeys.Text) 
     End Sub
 End Class

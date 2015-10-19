@@ -30,9 +30,9 @@ Partial Class gaway
         Me.Label2 = New System.Windows.Forms.Label()
         Me.aviablekeys = New System.Windows.Forms.RichTextBox()
         Me.remkey = New System.Windows.Forms.Button()
-        Me.keynr = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.version = New System.Windows.Forms.Label()
+        Me.keynr = New System.Windows.Forms.ListBox()
         Me.SuspendLayout()
         '
         'playsound
@@ -103,23 +103,14 @@ Partial Class gaway
         Me.remkey.UseVisualStyleBackColor = True
         Me.remkey.Visible = False
         '
-        'keynr
-        '
-        Me.keynr.Location = New System.Drawing.Point(145, 80)
-        Me.keynr.Name = "keynr"
-        Me.keynr.Size = New System.Drawing.Size(129, 20)
-        Me.keynr.TabIndex = 9
-        Me.keynr.Visible = False
-        Me.keynr.WordWrap = False
-        '
         'Label3
         '
         Me.Label3.AutoSize = True
         Me.Label3.Location = New System.Drawing.Point(146, 64)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(121, 13)
+        Me.Label3.Size = New System.Drawing.Size(87, 13)
         Me.Label3.TabIndex = 10
-        Me.Label3.Text = "Zeile als Ziffer angeben:"
+        Me.Label3.Text = "Zeile auswählen:"
         Me.Label3.Visible = False
         '
         'version
@@ -131,15 +122,26 @@ Partial Class gaway
         Me.version.TabIndex = 11
         Me.version.Text = "Version 0.0.4 - Stable Any CPU"
         '
+        'keynr
+        '
+        Me.keynr.FormattingEnabled = True
+        Me.keynr.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.keynr.Location = New System.Drawing.Point(148, 82)
+        Me.keynr.Name = "keynr"
+        Me.keynr.ScrollAlwaysVisible = True
+        Me.keynr.Size = New System.Drawing.Size(281, 30)
+        Me.keynr.TabIndex = 12
+        Me.keynr.Visible = False
+        '
         'gaway
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Control
         Me.ClientSize = New System.Drawing.Size(441, 502)
+        Me.Controls.Add(Me.keynr)
         Me.Controls.Add(Me.version)
         Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.keynr)
         Me.Controls.Add(Me.remkey)
         Me.Controls.Add(Me.aviablekeys)
         Me.Controls.Add(Me.Label2)
@@ -166,7 +168,7 @@ Partial Class gaway
     Friend WithEvents Label2 As Label
     Friend WithEvents aviablekeys As RichTextBox
     Friend WithEvents remkey As Button
-    Friend WithEvents keynr As TextBox
     Friend WithEvents Label3 As Label
     Friend WithEvents version As Label
+    Friend WithEvents keynr As ListBox
 End Class

@@ -117,11 +117,11 @@ Partial Class gaway
         '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(146, 70)
+        Me.Button2.Location = New System.Drawing.Point(130, 153)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(127, 22)
         Me.Button2.TabIndex = 15
-        Me.Button2.Text = "Key kopieren..."
+        Me.Button2.Text = "Auswahl kopieren"
         Me.Button2.UseVisualStyleBackColor = True
         '
         'gaway

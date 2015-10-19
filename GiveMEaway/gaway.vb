@@ -38,10 +38,6 @@
     ' gversion = Versionsnummer welche vom Webserver überprüft wird z.B. 0.0.1, 0.0.2 usw.
     '
     '
-    ' Versionsnummer für den Versionscheck
-    '
-    Dim gawayversion As String = "0.0.5"
-    '
     ' Aktionen die beim Start geladen/ausgeführt werden sollen
     '
     Private Sub gaway_Load(sender As Object, e As EventArgs) Handles MyBase.Load

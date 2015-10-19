@@ -130,4 +130,13 @@
         aviablekeys.Items.Remove(aviablekeys.SelectedItem)
         IO.File.WriteAllLines(inputFile, aviablekeys.Items.Cast(Of String).ToArray)
     End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        '
+        ' Löscht die komplette Liste
+        '
+        Dim inputFile As String = Environment.CurrentDirectory + "\keys.txt"
+        aviablekeys.Items.Clear()
+        IO.File.WriteAllLines(inputFile, aviablekeys.Items.Cast(Of String).ToArray)
+    End Sub
 End Class

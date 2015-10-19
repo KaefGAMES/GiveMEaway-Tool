@@ -40,7 +40,7 @@
     '
     ' Versionsnummer für den Versionscheck
     '
-    Dim gawayversion As String = "0.0.4"
+    Dim gawayversion As String = "0.0.5"
     '
     ' Aktionen die beim Start geladen/ausgeführt werden sollen
     '
@@ -56,7 +56,7 @@
         MsgBox("Changelog #4" & vbNewLine & "" & vbNewLine & "- Neue Keys werden jetzt in die Keys.txt geschrieben & gespeichert" & vbNewLine & "" & vbNewLine & "- Der Button für Key entfernen, die Textbox und die Bezeichnung sind vorerst nicht mehr sichtbar, bis die Funktion richtig funktioniert. :)", MsgBoxStyle.Information, "GiveMEAway - Willkommen! :)")
         MsgBox("Vielen Dank, dass du dich für unser kleines aber feines Tool zum Verwalten deiner GiveAway Keys entschieden hast." & vbNewLine & "" & vbNewLine & "Dieses Tool soll dich dabei unterstützen eine Liste von deinen Keys anzufertigen, für deinen aktuellen Livestream. Das Tool befindet sich noch in Entwicklung und Feedback ist gerne gesehen." & vbNewLine & "" & vbNewLine & "Besuche unsere Webseite für mehr Infos!" & vbNewLine & "www.kaefgames.de", MsgBoxStyle.Information, "GiveMEAway - Willkommen! :)")
         '
-        ' Lädt Liste mit dem Text aus der keys.txt beim Start
+        ' Bereitet das Laden der keys.txt als Liste vor
         '
         Dim loadfileforlist As IO.StreamReader
         loadfileforlist = IO.File.OpenText(Environment.CurrentDirectory + "\keys.txt")

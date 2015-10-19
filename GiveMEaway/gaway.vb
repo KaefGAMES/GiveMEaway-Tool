@@ -130,7 +130,5 @@
         ' Das Ganze muss ich nochma überarbeiten...irgendetwas stimmt da noch ned so ganz. :(
         ' Es funktioniert außerdem noch nicht!!!
         '
-        ' Buttons usw. erst wieder sichtbar, wenn Funktion gegeben.
-        '
     End Sub
 End Class

@@ -53,7 +53,7 @@
         '
         ' Startet normal weiter, wenn keine Updates vorhanden sind
         '
-        MsgBox("Changelog #4" & vbNewLine & "" & vbNewLine & "- Neue Keys werden jetzt in die Keys.txt geschrieben & gespeichert" & vbNewLine & "" & vbNewLine & "- Der Button für Key entfernen, die Textbox und die Bezeichnung sind vorerst nicht mehr sichtbar, bis die Funktion richtig funktioniert. :)", MsgBoxStyle.Information, "GiveMEAway - Willkommen! :)")
+        MsgBox("Changelog #5" & vbNewLine & "" & vbNewLine & "- Das entfernen von Keys ist jetzt möglich, wähle einfach die Zeile aus und klick auf den Button" & vbNewLine & "" & vbNewLine & "- Ein Button zum leeren der kompletten Liste ist jetzt verfügbar" & vbNewLine & "" & vbNewLine & "- Der Play Sound-Button ist jetzt etwas größer" & vbNewLine & "" & vbNewLine & "- Die unschöne Textbox zum entfernen einer Zeile ist nicht länger nötig und wurde entfernt. Wähle die Zeile einfach aus, die du löschen möchtest...", MsgBoxStyle.Information, "GiveMEAway - Willkommen! :)")
         MsgBox("Vielen Dank, dass du dich für unser kleines aber feines Tool zum Verwalten deiner GiveAway Keys entschieden hast." & vbNewLine & "" & vbNewLine & "Dieses Tool soll dich dabei unterstützen eine Liste von deinen Keys anzufertigen, für deinen aktuellen Livestream. Das Tool befindet sich noch in Entwicklung und Feedback ist gerne gesehen." & vbNewLine & "" & vbNewLine & "Besuche unsere Webseite für mehr Infos!" & vbNewLine & "www.kaefgames.de", MsgBoxStyle.Information, "GiveMEAway - Willkommen! :)")
         '
         ' Bereitet das Laden der keys.txt als Liste vor

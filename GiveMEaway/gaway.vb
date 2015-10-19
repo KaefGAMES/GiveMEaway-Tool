@@ -113,7 +113,7 @@
         Dim inputFile As String = Environment.CurrentDirectory + "\keys.txt"
         aviablekeys.Items.Add(keybox.Text)
         ' Speichere neuen Inhalt in die "keys.txt"
-        IO.File.WriteAllText(inputFile, aviablekeys.Text)
+        IO.File.WriteAllLines(inputFile, aviablekeys.Items.Cast(Of String).ToArray)
     End Sub
     '
     ' Spielt den mitgelieferten Sound ab. Sounddatei kann und sollte angepasst werden...es sei denn man mag den Sound! Dann sollte hier nix geändert werden. ;)
@@ -127,6 +127,6 @@
         '
         Dim inputFile As String = Environment.CurrentDirectory + "\keys.txt"
         aviablekeys.Items.Remove(aviablekeys.SelectedItem)
-        IO.File.WriteAllText(inputFile, aviablekeys.Text)
+        IO.File.WriteAllLines(inputFile, aviablekeys.Items.Cast(Of String).ToArray)
     End Sub
 End Class

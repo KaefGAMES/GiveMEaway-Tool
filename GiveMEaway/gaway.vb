@@ -42,7 +42,7 @@
     '
     Dim gawayversion As String = "0.0.4"
     '
-    ' Beim Starten Hinweise ausführen
+    ' Aktionen die beim Start geladen/ausgeführt werden sollen
     '
     Private Sub gaway_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         '
@@ -132,5 +132,6 @@
         '
         ' Buttons usw. erst wieder sichtbar, wenn Funktion gegeben.
         '
+
     End Sub
 End Class

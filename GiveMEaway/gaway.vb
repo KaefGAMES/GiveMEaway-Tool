@@ -48,8 +48,7 @@
         '
         ' Prüft vor beginn nach vorhandenen Updates!
         '
-        TestInternetConnection()
-        RunUpdate()
+        Process.Start("GiveMEupdate.exe")
         '
         ' Startet normal weiter, wenn keine Updates vorhanden sind
         '
@@ -66,46 +65,6 @@
         '
         aviablekeys.Items.AddRange(loadlist)
         loadfileforlist.Close()
-    End Sub
-    '
-    ' UPDATER AUSFÜHREN WENN NÖTIG
-    '
-    Private Const versionURL = "http://81.169.254.242/gaway/current_ver.txt"
-
-    Dim Web As New Net.WebClient()
-    '
-    ' Pingt google.de vor dem Update weil Google eigentlich IMMER erreichbar ist, wenn man Internet hat!
-    '
-    Function TestInternetConnection()
-
-        Dim ping As New Net.NetworkInformation.Ping
-
-        Try
-            ping.Send("google.de")
-            Return True
-        Catch ex As Exception
-            Return True
-        End Try
-    End Function
-    '
-    ' Testet vor dem Start des Updates dank der Funktion "TestInternetConnection()" ob Internet verfügbar ist
-    ' Beginnt dann damit die Versionsnummer vom Webserver auszulesen und wenn diese größer ist als unsere jetzige,
-    ' in der Software gespeicherte, Versionsnummer dann startet die geplante GiveMEupdate.exe während sich
-    ' GiveMEaway.exe für den Updateprozess schließt um diesen nicht zu verhindern. Easy Peasy!
-    '
-    Sub RunUpdate()
-        If TestInternetConnection() = True Then
-            Try
-                Dim version As Integer = Web.DownloadString(New Uri(versionURL))
-
-                If version > CInt(gawayversion) Then
-                    Process.Start("GiveMEupdate.exe")
-                    Me.Close()
-                End If
-            Catch ex As Exception
-                MsgBox(ex.ToString)
-            End Try
-        End If
     End Sub
     '
     ' Fügt eine neue Zeile zur Liste hinzu.

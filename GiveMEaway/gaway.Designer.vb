@@ -32,6 +32,7 @@ Partial Class gaway
         Me.version = New System.Windows.Forms.Label()
         Me.aviablekeys = New System.Windows.Forms.ListBox()
         Me.Button1 = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'playsound
@@ -114,12 +115,22 @@ Partial Class gaway
         Me.Button1.Text = "Liste leeren"
         Me.Button1.UseVisualStyleBackColor = True
         '
+        'Button2
+        '
+        Me.Button2.Location = New System.Drawing.Point(146, 70)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(127, 22)
+        Me.Button2.TabIndex = 15
+        Me.Button2.Text = "Key kopieren..."
+        Me.Button2.UseVisualStyleBackColor = True
+        '
         'gaway
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Control
         Me.ClientSize = New System.Drawing.Size(441, 502)
+        Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.aviablekeys)
         Me.Controls.Add(Me.version)
@@ -150,4 +161,5 @@ Partial Class gaway
     Friend WithEvents version As Label
     Friend WithEvents aviablekeys As ListBox
     Friend WithEvents Button1 As Button
+    Friend WithEvents Button2 As Button
 End Class

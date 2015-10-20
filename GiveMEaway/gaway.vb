@@ -114,7 +114,7 @@
     Private Sub addkey_Click(sender As Object, e As EventArgs) Handles addkey.Click
         ' Inhalt und Ausgabedatei als String für IO.File.WriteAllText
         Dim inputFile As String = Environment.CurrentDirectory + "\keys.txt"
-        aviablekeys.Items.Add(keybox.Text)
+        aviablekeys.Items.Add(aviablekeys.Items.Count + 1 & ")" & " " & keybox.Text)
         ' Speichere neuen Inhalt in die "keys.txt"
         IO.File.WriteAllLines(inputFile, aviablekeys.Items.Cast(Of String).ToArray)
     End Sub

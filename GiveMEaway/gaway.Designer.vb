@@ -42,6 +42,7 @@ Partial Class gaway
         Me.remkeytooltip = New System.Windows.Forms.ToolTip(Me.components)
         Me.addkeytooltip = New System.Windows.Forms.ToolTip(Me.components)
         Me.keyboxtooltip = New System.Windows.Forms.ToolTip(Me.components)
+        Me.plusbtt = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'playsound
@@ -58,7 +59,7 @@ Partial Class gaway
         '
         Me.keybox.Location = New System.Drawing.Point(146, 35)
         Me.keybox.Name = "keybox"
-        Me.keybox.Size = New System.Drawing.Size(283, 20)
+        Me.keybox.Size = New System.Drawing.Size(256, 20)
         Me.keybox.TabIndex = 1
         Me.keyboxtooltip.SetToolTip(Me.keybox, "Tippe deinen Key hier ein um Ihn der Liste hinzuzufügen.")
         '
@@ -185,12 +186,23 @@ Partial Class gaway
         Me.keyboxtooltip.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info
         Me.keyboxtooltip.ToolTipTitle = "So funktioniert's:"
         '
+        'plusbtt
+        '
+        Me.plusbtt.Location = New System.Drawing.Point(408, 34)
+        Me.plusbtt.Name = "plusbtt"
+        Me.plusbtt.Size = New System.Drawing.Size(20, 22)
+        Me.plusbtt.TabIndex = 17
+        Me.plusbtt.Text = "+"
+        Me.playsoundtooltip.SetToolTip(Me.plusbtt, "Spielt den ""standard"" Sound ab. " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "(Siehe dazu: Sounds\default.wav)")
+        Me.plusbtt.UseVisualStyleBackColor = True
+        '
         'gaway
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Control
         Me.ClientSize = New System.Drawing.Size(441, 502)
+        Me.Controls.Add(Me.plusbtt)
         Me.Controls.Add(Me.chooserandom)
         Me.Controls.Add(Me.copytoclip)
         Me.Controls.Add(Me.Button1)
@@ -232,4 +244,5 @@ Partial Class gaway
     Friend WithEvents remkeytooltip As ToolTip
     Friend WithEvents addkeytooltip As ToolTip
     Friend WithEvents keyboxtooltip As ToolTip
+    Friend WithEvents plusbtt As Button
 End Class

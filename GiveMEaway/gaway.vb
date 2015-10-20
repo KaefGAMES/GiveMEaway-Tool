@@ -159,4 +159,8 @@
         MessageBox.Show("Es ist: " + aviablekeys.Items(randomIndex), "GiveMEaway - GiveMErandom Ergebnis")
         My.Computer.Clipboard.SetText(aviablekeys.Items(randomIndex))
     End Sub
+
+    Private Sub plusbtt_Click(sender As Object, e As EventArgs) Handles plusbtt.Click
+
+    End Sub
 End Class

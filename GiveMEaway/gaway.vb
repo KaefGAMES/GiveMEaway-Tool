@@ -30,8 +30,8 @@
     '
     ' Deklaration
     ' addkey = Neuen Key hinzufügen
-    ' remkey = Key durch Zeilenangabe löschen (N/A)
-    ' chooserandom = Wählt einen zufälligen Key aus (N/A)
+    ' remkey = Key durch Zeilenangabe löschen
+    ' chooserandom = Wählt einen zufälligen Key aus
     ' playsound = Button der den Sound abspielt...*whoa*
     ' aviablekeys = Textbox mit allen Keys
     ' keybox = Eingabefeld für neue Keys
@@ -147,5 +147,16 @@
         ' Da normales Copy & Paste nicht funktioniert muss der Button geklickt werden. :3
         '
         My.Computer.Clipboard.SetText(aviablekeys.SelectedItem)
+    End Sub
+
+    Private Sub chooserandom_Click(sender As Object, e As EventArgs) Handles chooserandom.Click
+        '
+        ' Wählt eine zufällige Zeile in der Liste aus und speichert das Ergebnis in der Zwischenablage (STRG + C)
+        '
+        My.Computer.Audio.Play(Environment.CurrentDirectory + "\Sounds\random.wav", AudioPlayMode.Background)
+        Dim rnd As New Random
+        Dim randomIndex As Integer = rnd.Next(0, aviablekeys.Items.Count - 1)
+        MessageBox.Show("Es ist: " + aviablekeys.Items(randomIndex), "GiveMEaway - GiveMErandom Ergebnis")
+        My.Computer.Clipboard.SetText(aviablekeys.Items(randomIndex))
     End Sub
 End Class

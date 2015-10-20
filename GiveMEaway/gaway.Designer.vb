@@ -22,6 +22,7 @@ Partial Class gaway
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(gaway))
         Me.playsound = New System.Windows.Forms.Button()
         Me.keybox = New System.Windows.Forms.TextBox()
@@ -33,6 +34,11 @@ Partial Class gaway
         Me.aviablekeys = New System.Windows.Forms.ListBox()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.copytoclip = New System.Windows.Forms.Button()
+        Me.chooserandom = New System.Windows.Forms.Button()
+        Me.randomtooltip = New System.Windows.Forms.ToolTip(Me.components)
+        Me.copytoclipb = New System.Windows.Forms.ToolTip(Me.components)
+        Me.remlist = New System.Windows.Forms.ToolTip(Me.components)
+        Me.playsoundtooltip = New System.Windows.Forms.ToolTip(Me.components)
         Me.SuspendLayout()
         '
         'playsound
@@ -42,6 +48,7 @@ Partial Class gaway
         Me.playsound.Size = New System.Drawing.Size(128, 38)
         Me.playsound.TabIndex = 0
         Me.playsound.Text = "Play Sound :3"
+        Me.playsoundtooltip.SetToolTip(Me.playsound, "Spielt den ""standard"" Sound ab. " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "(Siehe dazu: Sounds\default.wav)")
         Me.playsound.UseVisualStyleBackColor = True
         '
         'keybox
@@ -90,7 +97,7 @@ Partial Class gaway
         'version
         '
         Me.version.AutoSize = True
-        Me.version.Location = New System.Drawing.Point(269, 152)
+        Me.version.Location = New System.Drawing.Point(269, 163)
         Me.version.Name = "version"
         Me.version.Size = New System.Drawing.Size(163, 13)
         Me.version.TabIndex = 11
@@ -113,6 +120,7 @@ Partial Class gaway
         Me.Button1.Size = New System.Drawing.Size(127, 22)
         Me.Button1.TabIndex = 14
         Me.Button1.Text = "Liste leeren"
+        Me.remlist.SetToolTip(Me.Button1, "Leert die komplette Liste.")
         Me.Button1.UseVisualStyleBackColor = True
         '
         'copytoclip
@@ -122,7 +130,40 @@ Partial Class gaway
         Me.copytoclip.Size = New System.Drawing.Size(127, 22)
         Me.copytoclip.TabIndex = 15
         Me.copytoclip.Text = "Auswahl kopieren"
+        Me.copytoclipb.SetToolTip(Me.copytoclip, "Kopiert deine Auswahl aus der Liste in die Zwischenablage. (STRG+C)")
         Me.copytoclip.UseVisualStyleBackColor = True
+        '
+        'chooserandom
+        '
+        Me.chooserandom.Location = New System.Drawing.Point(146, 70)
+        Me.chooserandom.Name = "chooserandom"
+        Me.chooserandom.Size = New System.Drawing.Size(127, 38)
+        Me.chooserandom.TabIndex = 16
+        Me.chooserandom.Text = "GiveMErandom"
+        Me.randomtooltip.SetToolTip(Me.chooserandom, "Wählt einen zufälligen Key aus der Liste aus und spielt dabei einen Sound ab." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "De" &
+        "r ausgewählte Key wird direkt in die Zwischenablage (STRG+C) kopiert und kann" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "v" &
+        "erschickt werden.")
+        Me.chooserandom.UseVisualStyleBackColor = True
+        '
+        'randomtooltip
+        '
+        Me.randomtooltip.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info
+        Me.randomtooltip.ToolTipTitle = "So funktioniert's:"
+        '
+        'copytoclipb
+        '
+        Me.copytoclipb.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info
+        Me.copytoclipb.ToolTipTitle = "So funktioniert's:"
+        '
+        'remlist
+        '
+        Me.remlist.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info
+        Me.remlist.ToolTipTitle = "So funktioniert's:"
+        '
+        'playsoundtooltip
+        '
+        Me.playsoundtooltip.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info
+        Me.playsoundtooltip.ToolTipTitle = "So funktioniert's:"
         '
         'gaway
         '
@@ -130,6 +171,7 @@ Partial Class gaway
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Control
         Me.ClientSize = New System.Drawing.Size(441, 502)
+        Me.Controls.Add(Me.chooserandom)
         Me.Controls.Add(Me.copytoclip)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.aviablekeys)
@@ -162,4 +204,9 @@ Partial Class gaway
     Friend WithEvents aviablekeys As ListBox
     Friend WithEvents Button1 As Button
     Friend WithEvents copytoclip As Button
+    Friend WithEvents chooserandom As Button
+    Friend WithEvents randomtooltip As ToolTip
+    Friend WithEvents copytoclipb As ToolTip
+    Friend WithEvents remlist As ToolTip
+    Friend WithEvents playsoundtooltip As ToolTip
 End Class

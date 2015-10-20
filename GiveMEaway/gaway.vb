@@ -161,6 +161,12 @@
     End Sub
 
     Private Sub plusbtt_Click(sender As Object, e As EventArgs) Handles plusbtt.Click
-
+        '
+        ' Öffnet ein Fenster zum Hinzufügen mehrerer Keys (gleichzeitig)
+        '
+        Mkey.Show()
+        If Mkey.Show = True Then
+            plusbtt.Enabled = False
+        End If
     End Sub
 End Class

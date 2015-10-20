@@ -39,6 +39,9 @@ Partial Class gaway
         Me.copytoclipb = New System.Windows.Forms.ToolTip(Me.components)
         Me.remlist = New System.Windows.Forms.ToolTip(Me.components)
         Me.playsoundtooltip = New System.Windows.Forms.ToolTip(Me.components)
+        Me.remkeytooltip = New System.Windows.Forms.ToolTip(Me.components)
+        Me.addkeytooltip = New System.Windows.Forms.ToolTip(Me.components)
+        Me.keyboxtooltip = New System.Windows.Forms.ToolTip(Me.components)
         Me.SuspendLayout()
         '
         'playsound
@@ -57,6 +60,7 @@ Partial Class gaway
         Me.keybox.Name = "keybox"
         Me.keybox.Size = New System.Drawing.Size(283, 20)
         Me.keybox.TabIndex = 1
+        Me.keyboxtooltip.SetToolTip(Me.keybox, "Tippe deinen Key hier ein um Ihn der Liste hinzuzufügen.")
         '
         'Label1
         '
@@ -74,6 +78,8 @@ Partial Class gaway
         Me.addkey.Size = New System.Drawing.Size(127, 38)
         Me.addkey.TabIndex = 3
         Me.addkey.Text = "Key hinzufügen"
+        Me.addkeytooltip.SetToolTip(Me.addkey, "Fügt einen neuen Key aus der Textbox zur Liste hinzu." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Speichert die Liste anschl" &
+        "ießend in der Keys.txt")
         Me.addkey.UseVisualStyleBackColor = True
         '
         'Label2
@@ -92,12 +98,13 @@ Partial Class gaway
         Me.remkey.Size = New System.Drawing.Size(127, 38)
         Me.remkey.TabIndex = 8
         Me.remkey.Text = "Key entfernen"
+        Me.remkeytooltip.SetToolTip(Me.remkey, "Entfernt die aktuelle Auswahl aus der Liste und aus der Keys.txt")
         Me.remkey.UseVisualStyleBackColor = True
         '
         'version
         '
         Me.version.AutoSize = True
-        Me.version.Location = New System.Drawing.Point(269, 163)
+        Me.version.Location = New System.Drawing.Point(265, 152)
         Me.version.Name = "version"
         Me.version.Size = New System.Drawing.Size(163, 13)
         Me.version.TabIndex = 11
@@ -125,7 +132,7 @@ Partial Class gaway
         '
         'copytoclip
         '
-        Me.copytoclip.Location = New System.Drawing.Point(130, 153)
+        Me.copytoclip.Location = New System.Drawing.Point(118, 153)
         Me.copytoclip.Name = "copytoclip"
         Me.copytoclip.Size = New System.Drawing.Size(127, 22)
         Me.copytoclip.TabIndex = 15
@@ -140,9 +147,7 @@ Partial Class gaway
         Me.chooserandom.Size = New System.Drawing.Size(127, 38)
         Me.chooserandom.TabIndex = 16
         Me.chooserandom.Text = "GiveMErandom"
-        Me.randomtooltip.SetToolTip(Me.chooserandom, "Wählt einen zufälligen Key aus der Liste aus und spielt dabei einen Sound ab." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "De" &
-        "r ausgewählte Key wird direkt in die Zwischenablage (STRG+C) kopiert und kann" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "v" &
-        "erschickt werden.")
+        Me.randomtooltip.SetToolTip(Me.chooserandom, resources.GetString("chooserandom.ToolTip"))
         Me.chooserandom.UseVisualStyleBackColor = True
         '
         'randomtooltip
@@ -164,6 +169,21 @@ Partial Class gaway
         '
         Me.playsoundtooltip.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info
         Me.playsoundtooltip.ToolTipTitle = "So funktioniert's:"
+        '
+        'remkeytooltip
+        '
+        Me.remkeytooltip.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info
+        Me.remkeytooltip.ToolTipTitle = "So funktioniert's:"
+        '
+        'addkeytooltip
+        '
+        Me.addkeytooltip.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info
+        Me.addkeytooltip.ToolTipTitle = "So funktioniert's:"
+        '
+        'keyboxtooltip
+        '
+        Me.keyboxtooltip.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info
+        Me.keyboxtooltip.ToolTipTitle = "So funktioniert's:"
         '
         'gaway
         '
@@ -209,4 +229,7 @@ Partial Class gaway
     Friend WithEvents copytoclipb As ToolTip
     Friend WithEvents remlist As ToolTip
     Friend WithEvents playsoundtooltip As ToolTip
+    Friend WithEvents remkeytooltip As ToolTip
+    Friend WithEvents addkeytooltip As ToolTip
+    Friend WithEvents keyboxtooltip As ToolTip
 End Class

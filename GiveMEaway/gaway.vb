@@ -52,14 +52,10 @@
         '
         TestInternetConnection()
         RunUpdate()
-        ' Prüft ob eine veraltete GiveMEupdate.exe vorhanden ist und löscht diese anschließend
-        If IO.File.Exists(Environment.CurrentDirectory + "\GiveMEupdate.exe") Then
-            IO.File.Delete(Environment.CurrentDirectory + "\GiveMEupdate.exe")
-        End If
         '
         ' Startet normal weiter, wenn keine Updates vorhanden sind
         '
-        MsgBox("Changelog #6" & vbNewLine & "" & vbNewLine & "- Die GiveMEupdate.exe ist vorläufig nicht mehr dabei! Sollte eine ältere Version in deinem Verzeichnis liegen, wird diese automatisch gelöscht." & vbNewLine & "" & vbNewLine & "- Ein Button zum Kopieren des jeweils ausgewählten Keys ist jetzt verfügbar.", MsgBoxStyle.Information, "GiveMEAway - Willkommen! :)")
+        MsgBox("Changelog #6" & vbNewLine & "" & vbNewLine & "- Die GiveMEupdate.exe funktioniert nur noch auf manuellem Weg und muss vom Nutzer selbständig ausgeführt werden. Sie kann außerdem IMMER ausgeführt werden um die aktuellste Version herunterzuladen." & vbNewLine & "" & vbNewLine & "- Ein Button zum Kopieren des jeweils ausgewählten Keys ist jetzt verfügbar.", MsgBoxStyle.Information, "GiveMEAway - Willkommen! :)")
         MsgBox("Vielen Dank, dass du dich für unser kleines aber feines Tool zum Verwalten deiner GiveAway Keys entschieden hast." & vbNewLine & "" & vbNewLine & "Dieses Tool soll dich dabei unterstützen eine Liste von deinen Keys anzufertigen, für deinen aktuellen Livestream. Das Tool befindet sich noch in Entwicklung und Feedback ist gerne gesehen." & vbNewLine & "" & vbNewLine & "Besuche unsere Webseite für mehr Infos!" & vbNewLine & "www.kaefgames.de", MsgBoxStyle.Information, "GiveMEAway - Willkommen! :)")
         '
         ' Bereitet das Laden der keys.txt als Liste vor
@@ -99,8 +95,10 @@
                 ' Versionscheck für GiveMEupdate.exe
                 If version > CInt(gawayversion) Then
                     Try
-                        ' Wenn neue Version verfügbar, dann hinweis anzeigen!
-                        MsgBox("Eine neue Version von GiveMEaway ist verfügbar!" & vbNewLine & "" & vbNewLine & "Bitte besuche http://kaefgames.github.io/GiveMEaway-Tool/ und lade dir die neueste Version herunter.", MsgBoxStyle.Information, "GiveMEAway - Ein Update ist verfügbar!")
+                        ' Wenn neue Version verfügbar, dann hinweis anzeigen, Updater starten und Fenster schließen!
+                        MsgBox("Eine neue Version von GiveMEaway ist verfügbar!", MsgBoxStyle.Information, "GiveMEAway - Ein Update ist verfügbar!")
+                        Process.Start("GiveMEupdate.exe")
+                        Me.Close()
                     Catch ex As Exception
                         MsgBox(ex.ToString)
                     End Try

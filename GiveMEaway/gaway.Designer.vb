@@ -193,7 +193,6 @@ Partial Class gaway
         Me.plusbtt.Size = New System.Drawing.Size(20, 22)
         Me.plusbtt.TabIndex = 17
         Me.plusbtt.Text = "+"
-        Me.playsoundtooltip.SetToolTip(Me.plusbtt, "Spielt den ""standard"" Sound ab. " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "(Siehe dazu: Sounds\default.wav)")
         Me.plusbtt.UseVisualStyleBackColor = True
         '
         'gaway

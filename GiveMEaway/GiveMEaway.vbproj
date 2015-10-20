@@ -100,6 +100,12 @@
       <DependentUpon>gaway.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Mkey.Designer.vb">
+      <DependentUpon>Mkey.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Mkey.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -119,6 +125,9 @@
   <ItemGroup>
     <EmbeddedResource Include="gaway.resx">
       <DependentUpon>gaway.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mkey.resx">
+      <DependentUpon>Mkey.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>

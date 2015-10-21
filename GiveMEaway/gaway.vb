@@ -153,11 +153,17 @@
         '
         ' Wählt eine zufällige Zeile in der Liste aus und speichert das Ergebnis in der Zwischenablage (STRG + C)
         '
-        My.Computer.Audio.Play(Environment.CurrentDirectory + "\Sounds\random.wav", AudioPlayMode.Background)
-        Dim rnd As New Random
-        Dim randomIndex As Integer = rnd.Next(0, aviablekeys.Items.Count - 1)
-        MessageBox.Show("Es ist: " + aviablekeys.Items(randomIndex), "GiveMEaway - GiveMErandom Ergebnis")
-        My.Computer.Clipboard.SetText(aviablekeys.Items(randomIndex))
+        '
+        If aviablekeys.Items.Count = 0 Then
+            MessageBox.Show("Die Liste darf nicht leer sein.", "GiveMEaway - Fehler!")
+            Exit Sub
+        Else
+            My.Computer.Audio.Play(Environment.CurrentDirectory + "\Sounds\random.wav", AudioPlayMode.Background)
+            Dim rnd As New Random
+            Dim randomIndex As Integer = rnd.Next(0, aviablekeys.Items.Count - 1)
+            MessageBox.Show("Es ist: " + aviablekeys.Items(randomIndex), "GiveMEaway - GiveMErandom Ergebnis")
+            My.Computer.Clipboard.SetText(aviablekeys.Items(randomIndex))
+        End If
     End Sub
 
     Private Sub plusbtt_Click(sender As Object, e As EventArgs) Handles plusbtt.Click

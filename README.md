@@ -5,7 +5,7 @@ Funktioniert auf hitbox.tv und auf twitch.tv gleichermaßen...welch Revolution. 
 Offizieller Stream:
 hitbox.tv/kaefgames-entertainment
 
-www.kaefgames.de
+www.käfgames.de
 
 # Warum Visual Basic?
 Visual Basic hat es bereits im Namen. Es ist die Basis der Basis, einfach zu lernen und zu verstehen. Man braucht nur ein wenig Zeit, Geduld und kann sofort damit loslegen. Für andere Scriptsprachen bräuchten der Großteil aller Nutzer ggf. Jahre um diese im Ansatz zu verstehen. Visual Basic bietet somit also eine sichere Umgebung, auch für Anfänger.

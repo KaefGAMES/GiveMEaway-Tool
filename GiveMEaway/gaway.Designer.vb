@@ -107,9 +107,9 @@ Partial Class gaway
         Me.version.AutoSize = True
         Me.version.Location = New System.Drawing.Point(265, 152)
         Me.version.Name = "version"
-        Me.version.Size = New System.Drawing.Size(163, 13)
+        Me.version.Size = New System.Drawing.Size(154, 13)
         Me.version.TabIndex = 11
-        Me.version.Text = "Version 0.0.6.1 - Stable Any CPU"
+        Me.version.Text = "Version 0.0.7 - Stable Any CPU"
         '
         'aviablekeys
         '

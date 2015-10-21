@@ -41,7 +41,7 @@
     '
     '
     Private Const versionURL = "http://81.169.254.242/gaway/current_ver.txt"
-    Dim gawayversion As String = "0.0.6"
+    Dim gawayversion As String = "0.0.7"
     Dim Web As New Net.WebClient()
     '
     ' Aktionen die beim Start geladen/ausgeführt werden sollen
@@ -55,7 +55,7 @@
         '
         ' Startet normal weiter, wenn keine Updates vorhanden sind
         '
-        MsgBox("Changelog #6" & vbNewLine & "" & vbNewLine & "- Die GiveMEupdate.exe funktioniert nur noch auf manuellem Weg und muss vom Nutzer selbständig ausgeführt werden. Sie kann außerdem IMMER ausgeführt werden um die aktuellste Version herunterzuladen." & vbNewLine & "" & vbNewLine & "- Ein Button zum Kopieren des jeweils ausgewählten Keys ist jetzt verfügbar." & vbNewLine & "" & vbNewLine & "- Keys können jetzt über den GiveMErandom-Button randommäßig ausgewählt und vergeben werden, wenn der Gewinner bzw. die Gewinnerin unentschlossen sein sollte. ;)" & vbNewLine & "" & vbNewLine & "- Keys werden jetzt automatisch durchnummeriert beim Hinzufügen. (Idee von nerdtopiaHD)" & vbNewLine & "" & vbNewLine & "- Alle Buttons enthalten nun Tooltips als Hilfestellungen." & vbNewLine & "" & vbNewLine & "- Es ist nun möglich, mehr als einen Key zur Liste hinzuzufügen.", MsgBoxStyle.Information, "GiveMEAway - Willkommen! :)")
+        MsgBox("Changelog #7" & vbNewLine & "" & vbNewLine & "- Die GiveMEupdate.exe funktioniert nur noch auf manuellem Weg und muss vom Nutzer selbständig ausgeführt werden. Sie kann außerdem IMMER ausgeführt werden um die aktuellste Version herunterzuladen." & vbNewLine & "" & vbNewLine & "- Ein Button zum Kopieren des jeweils ausgewählten Keys ist jetzt verfügbar." & vbNewLine & "" & vbNewLine & "- Keys können jetzt über den GiveMErandom-Button randommäßig ausgewählt und vergeben werden, wenn der Gewinner bzw. die Gewinnerin unentschlossen sein sollte. ;)" & vbNewLine & "" & vbNewLine & "- Keys werden jetzt automatisch durchnummeriert beim Hinzufügen. (Idee von nerdtopiaHD)" & vbNewLine & "" & vbNewLine & "- Alle Buttons enthalten nun Tooltips als Hilfestellungen." & vbNewLine & "" & vbNewLine & "- Es ist nun möglich, mehr als einen Key zur Liste hinzuzufügen.", MsgBoxStyle.Information, "GiveMEAway - Willkommen! :)")
         MsgBox("Vielen Dank, dass du dich für unser kleines aber feines Tool zum Verwalten deiner GiveAway Keys entschieden hast." & vbNewLine & "" & vbNewLine & "Dieses Tool soll dich dabei unterstützen eine Liste von deinen Keys anzufertigen, für deinen aktuellen Livestream. Das Tool befindet sich noch in Entwicklung und Feedback ist gerne gesehen." & vbNewLine & "" & vbNewLine & "Besuche unsere Webseite für mehr Infos!" & vbNewLine & "www.kaefgames.de", MsgBoxStyle.Information, "GiveMEAway - Willkommen! :)")
         '
         ' Bereitet das Laden der keys.txt als Liste vor

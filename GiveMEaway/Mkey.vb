@@ -1,4 +1,33 @@
 ﻿Public Class Mkey
+    '                               __
+    '                             .d$$b		          _..::::::.._
+    '                           .' TO$;\		    .::::::::::::::.
+    '                          /  : TP._;		   ::::::::::::::::::
+    '                         / _.;  :Tb|		  ::::::::::::::::::::
+    '                        /   /   ;j$j		 ::::::::::::::::::::::
+    '                    _.-"       d$$$$		 ::::::::::::::::::::::
+    '                  .' ..       d$$$$;		  ::::::::::::::::::::
+    '                 /  /P'      d$$$$P. |\	   ::::::::::::::::::
+    '                /   "      .d$$$P' |\^"l	    '::::::::::::::'
+    '              .'           `T$P^"""""  :	      ''''''''''''
+    '          ._.'      _.'                ;
+    '       `-.-".-'-' ._.       _.-"    .-"
+    '     `.-" _____  ._              .-"
+    '    -(.g$$$$$$$b.              .'
+    '      ""^^T$$$P^)            .(:		KaefGAMES Entertainment
+    '        _/  -"  /.'         /:/;	    GiveMEAway-Tool zum organisierten Vergeben von Keys bei Livestreams :3
+    '     ._.'-'`-'  ")/         /;/;       www.kaefgames.de
+    '  `-.-"..--""   " /         /  ;
+    ' .-" ..--""        -'          :
+    ' ..--""--.-"         (\      .-(\
+    '   ..--""              `-\(\/;`
+    '     _.                      :
+    '                             ;`-
+    '                            :\
+    '                            ;	 Copyright 2015, All Rights reserved
+    '
+    '
+    '
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Dim empty = Me.Controls.OfType(Of TextBox)().Where(Function(txt) txt.Text.Length = 0)
         Dim notempty = Me.Controls.OfType(Of TextBox)().Where(Function(txt) txt.Text.Length = 1)

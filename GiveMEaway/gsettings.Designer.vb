@@ -131,9 +131,10 @@ Partial Class gsettings
         '
         Me.TextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.TextBox2.Enabled = False
-        Me.TextBox2.Location = New System.Drawing.Point(7, 41)
+        Me.TextBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox2.Location = New System.Drawing.Point(6, 86)
         Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(351, 13)
+        Me.TextBox2.Size = New System.Drawing.Size(351, 17)
         Me.TextBox2.TabIndex = 0
         Me.TextBox2.Text = "Noch nicht verfügbar!"
         Me.TextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center

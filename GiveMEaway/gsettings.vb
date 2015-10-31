@@ -60,10 +60,24 @@ Public Class gsettings
         If readINI_deDE = "deDE" Then
             langDE.Checked = True
             langEN.Enabled = False
+            ' Übersetzungen
+            Label1.Text = "Wähle eine Sprache"
+            TabPage1.Text = "Sprache"
+            TabPage2.Text = "Anbieter"
+            langDE.Text = "Deutsch"
+            langEN.Text = "Englisch"
+            save.Text = "Speichern"
         End If
-        If readINI_deDE = "enUS" Then
+        If readINI_enUS = "enUS" Then
             langEN.Checked = True
             langDE.Enabled = False
+            ' Translations
+            Label1.Text = "Choose a Language"
+            TabPage1.Text = "Language"
+            TabPage2.Text = "Host"
+            langDE.Text = "German"
+            langEN.Text = "English"
+            save.Text = "Save"
         End If
     End Sub
 

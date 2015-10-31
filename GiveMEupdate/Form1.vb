@@ -1,4 +1,4 @@
-﻿Public Class updater
+﻿Public Class Form1
     '                               __
     '                             .d$$b		          _..::::::.._
     '                           .' TO$;\		    .::::::::::::::.

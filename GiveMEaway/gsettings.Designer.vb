@@ -30,6 +30,7 @@ Partial Class gsettings
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.TabControl.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.SuspendLayout()
@@ -56,6 +57,7 @@ Partial Class gsettings
         '
         'TabPage1
         '
+        Me.TabPage1.Controls.Add(Me.TextBox1)
         Me.TabPage1.Controls.Add(Me.langEN)
         Me.TabPage1.Controls.Add(Me.langDE)
         Me.TabPage1.Controls.Add(Me.Label1)
@@ -113,6 +115,15 @@ Partial Class gsettings
         Me.TabPage3.TabIndex = 2
         Me.TabPage3.Text = "Sounds"
         '
+        'TextBox1
+        '
+        Me.TextBox1.Enabled = False
+        Me.TextBox1.Location = New System.Drawing.Point(6, 134)
+        Me.TextBox1.Multiline = True
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(352, 66)
+        Me.TextBox1.TabIndex = 3
+        '
         'gsettings
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -137,4 +148,5 @@ Partial Class gsettings
     Friend WithEvents Label1 As Label
     Friend WithEvents langEN As CheckBox
     Friend WithEvents langDE As CheckBox
+    Friend WithEvents TextBox1 As TextBox
 End Class

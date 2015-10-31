@@ -52,12 +52,11 @@ Public Class gsettings
         '
         ' 1) Sprache auslesen
         '
-        Dim readINI_deDE = ReadIni(File, Section_lang, lang, "deDE")
-        Dim readINI_enUS = ReadIni(File, Section_lang, lang, "enUS")
+        Dim readLANG = ReadIni(File, Section_lang, lang, "")
         '
         '
         '
-        If readINI_deDE = "deDE" Then
+        If readLANG = "deDE" Then
             langDE.Checked = True
             langEN.Enabled = False
             ' Übersetzungen
@@ -68,7 +67,7 @@ Public Class gsettings
             langEN.Text = "Englisch"
             save.Text = "Speichern"
         End If
-        If readINI_enUS = "enUS" Then
+        If readLANG = "enUS" Then
             langEN.Checked = True
             langDE.Enabled = False
             ' Translations
@@ -95,6 +94,7 @@ Public Class gsettings
             ' Schreibt die Ini
             '
             writeIni(File, Section_lang, lang, "deDE")
+            TextBox1.Text = "ACHTUNG:" + vbNewLine + "Das Ändern der Spracheinstellungen erfodert einen Neustart des Programmes!"
         End If
         If langDE.Checked = False Then
             langEN.Enabled = True
@@ -108,6 +108,7 @@ Public Class gsettings
             ' Schreibt die Ini
             '
             writeIni(File, Section_lang, lang, "enUS")
+            TextBox1.Text = "ATTENTION:" + vbNewLine + "Changing the Language-Settings require a restart of the Programm!"
         End If
         If langEN.Checked = False Then
             langDE.Enabled = True

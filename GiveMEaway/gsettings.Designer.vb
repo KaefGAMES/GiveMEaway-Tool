@@ -31,8 +31,10 @@ Partial Class gsettings
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.TabControl.SuspendLayout()
         Me.TabPage1.SuspendLayout()
+        Me.TabPage2.SuspendLayout()
         Me.SuspendLayout()
         '
         'save
@@ -99,6 +101,7 @@ Partial Class gsettings
         '
         'TabPage2
         '
+        Me.TabPage2.Controls.Add(Me.TextBox2)
         Me.TabPage2.Location = New System.Drawing.Point(4, 22)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
@@ -124,6 +127,17 @@ Partial Class gsettings
         Me.TextBox1.Size = New System.Drawing.Size(352, 66)
         Me.TextBox1.TabIndex = 3
         '
+        'TextBox2
+        '
+        Me.TextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TextBox2.Enabled = False
+        Me.TextBox2.Location = New System.Drawing.Point(7, 41)
+        Me.TextBox2.Name = "TextBox2"
+        Me.TextBox2.Size = New System.Drawing.Size(351, 13)
+        Me.TextBox2.TabIndex = 0
+        Me.TextBox2.Text = "Noch nicht verfügbar!"
+        Me.TextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
         'gsettings
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -136,6 +150,8 @@ Partial Class gsettings
         Me.TabControl.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()
+        Me.TabPage2.ResumeLayout(False)
+        Me.TabPage2.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -149,4 +165,5 @@ Partial Class gsettings
     Friend WithEvents langEN As CheckBox
     Friend WithEvents langDE As CheckBox
     Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents TextBox2 As TextBox
 End Class

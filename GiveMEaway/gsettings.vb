@@ -54,29 +54,33 @@ Public Class gsettings
         '
         Dim readLANG = ReadIni(File, Section_lang, lang, "")
         '
-        '
-        '
+        ' 2) Übersetzungen anwenden
+        ' 
         If readLANG = "deDE" Then
             langDE.Checked = True
             langEN.Enabled = False
-            ' Übersetzungen
+            save.Text = "Speichern"
+            ' Übersetzungen // TAB SPRACHE
             Label1.Text = "Wähle eine Sprache"
             TabPage1.Text = "Sprache"
             TabPage2.Text = "Anbieter"
             langDE.Text = "Deutsch"
             langEN.Text = "Englisch"
-            save.Text = "Speichern"
+            ' Übersetzungen // TAB ANBIETER
+            TextBox2.Text = "Noch nicht verfügbar!"
         End If
         If readLANG = "enUS" Then
             langEN.Checked = True
             langDE.Enabled = False
-            ' Translations
+            save.Text = "Save"
+            ' Translations // TAB LANG
             Label1.Text = "Choose a Language"
             TabPage1.Text = "Language"
             TabPage2.Text = "Host"
             langDE.Text = "German"
             langEN.Text = "English"
-            save.Text = "Save"
+            ' Translations // TAB HOST
+            TextBox2.Text = "Not yet aviable!"
         End If
     End Sub
 

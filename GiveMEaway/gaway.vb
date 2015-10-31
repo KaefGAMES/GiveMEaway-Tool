@@ -61,7 +61,7 @@
         ' Bereitet das Laden der keys.txt als Liste vor
         '
         Dim loadfileforlist As IO.StreamReader
-        loadfileforlist = IO.File.OpenText(Environment.CurrentDirectory + "\keys.txt")
+        loadfileforlist = IO.File.OpenText(Environment.CurrentDirectory & "\keys.txt")
         Dim loadlist() As String = loadfileforlist.ReadToEnd.Split(vbNewLine)
         '
         ' Erstellt die Auswahlliste
@@ -114,9 +114,17 @@
     Private Sub addkey_Click(sender As Object, e As EventArgs) Handles addkey.Click
         ' Inhalt und Ausgabedatei als String für IO.File.WriteAllText
         Dim inputFile As String = Environment.CurrentDirectory + "\keys.txt"
-        aviablekeys.Items.Add(aviablekeys.Items.Count + 1 & ")" & " " & keybox.Text)
-        ' Speichere neuen Inhalt in die "keys.txt"
-        IO.File.WriteAllLines(inputFile, aviablekeys.Items.Cast(Of String).ToArray)
+        ' Neuen Inhalt hinzufügen
+        If keybox.Text = "" Then
+            MessageBox.Show("Das Textfeld darf nicht leer sein.", "GiveMEaway - Fehler!")
+            Exit Sub
+        Else
+            aviablekeys.Items.Add(aviablekeys.Items.Count + 1 & ")" & " " & keybox.Text)
+            ' Speichere neuen Inhalt in die "keys.txt"
+            IO.File.WriteAllLines(inputFile, aviablekeys.Items.Cast(Of String).ToArray)
+            ' Setze den Inhalt des Textfeldes wieder zurück
+            keybox.Text = ""
+        End If
     End Sub
     '
     ' Spielt den mitgelieferten Sound ab. Sounddatei kann und sollte angepasst werden...es sei denn man mag den Sound! Dann sollte hier nix geändert werden. ;)

@@ -43,6 +43,7 @@ Partial Class gaway
         Me.addkeytooltip = New System.Windows.Forms.ToolTip(Me.components)
         Me.keyboxtooltip = New System.Windows.Forms.ToolTip(Me.components)
         Me.plusbtt = New System.Windows.Forms.Button()
+        Me.opensettings = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'playsound
@@ -195,12 +196,23 @@ Partial Class gaway
         Me.plusbtt.Text = "+"
         Me.plusbtt.UseVisualStyleBackColor = True
         '
+        'opensettings
+        '
+        Me.opensettings.Location = New System.Drawing.Point(301, 114)
+        Me.opensettings.Name = "opensettings"
+        Me.opensettings.Size = New System.Drawing.Size(127, 22)
+        Me.opensettings.TabIndex = 18
+        Me.opensettings.Text = "Einstellungen"
+        Me.copytoclipb.SetToolTip(Me.opensettings, "Kopiert deine Auswahl aus der Liste in die Zwischenablage. (STRG+C)")
+        Me.opensettings.UseVisualStyleBackColor = True
+        '
         'gaway
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Control
         Me.ClientSize = New System.Drawing.Size(441, 502)
+        Me.Controls.Add(Me.opensettings)
         Me.Controls.Add(Me.plusbtt)
         Me.Controls.Add(Me.chooserandom)
         Me.Controls.Add(Me.copytoclip)
@@ -244,4 +256,5 @@ Partial Class gaway
     Friend WithEvents addkeytooltip As ToolTip
     Friend WithEvents keyboxtooltip As ToolTip
     Friend WithEvents plusbtt As Button
+    Friend WithEvents opensettings As Button
 End Class

@@ -100,12 +100,19 @@
       <DependentUpon>gaway.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="gsettings.Designer.vb">
+      <DependentUpon>gsettings.vb</DependentUpon>
+    </Compile>
+    <Compile Include="gsettings.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Mkey.Designer.vb">
       <DependentUpon>Mkey.vb</DependentUpon>
     </Compile>
     <Compile Include="Mkey.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="modINI.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -125,6 +132,9 @@
   <ItemGroup>
     <EmbeddedResource Include="gaway.resx">
       <DependentUpon>gaway.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gsettings.resx">
+      <DependentUpon>gsettings.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Mkey.resx">
       <DependentUpon>Mkey.vb</DependentUpon>

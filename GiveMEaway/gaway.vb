@@ -50,8 +50,8 @@
         '
         ' Prüft vor beginn nach vorhandenen Updates!
         '
-        TestInternetConnection()
-        RunUpdate()
+        ' TestInternetConnection()
+        ' RunUpdate()
         '
         ' Startet normal weiter, wenn keine Updates vorhanden sind
         '
@@ -179,5 +179,12 @@
         ' Öffnet ein Fenster zum Hinzufügen mehrerer Keys (gleichzeitig)
         '
         Mkey.Show()
+    End Sub
+
+    Private Sub opensettings_Click(sender As Object, e As EventArgs) Handles opensettings.Click
+        '
+        ' Öffnet das Fenster für die Einstellungen
+        '
+        gsettings.Show()
     End Sub
 End Class

@@ -133,8 +133,8 @@
         '
         ' Prüft vor beginn nach vorhandenen Updates!
         '
-        'TestInternetConnection()
-        'RunUpdate()
+        TestInternetConnection()
+        RunUpdate()
         '
         ' Startet normal weiter, wenn keine Updates vorhanden sind
         '

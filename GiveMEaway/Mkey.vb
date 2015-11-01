@@ -28,6 +28,19 @@
     '
     '
     '
+    '
+    ' Lädt übersetzungen
+    '
+    Dim File = Application.StartupPath + "\away.ini"
+    '
+    ' Bestimmt die Sektionen in der .ini
+    '
+    Dim Section_lang = "Language"
+    '
+    ' Bestimmt die "Unterpunkte" in der .ini
+    '
+    Dim lang = "lang"
+    '
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Dim inputFile As String = Environment.CurrentDirectory + "\keys.txt"
 
@@ -44,5 +57,28 @@
         IO.File.WriteAllLines(inputFile, gaway.aviablekeys.Items.Cast(Of String).ToArray)
 
         Me.Close()
+    End Sub
+
+    Private Sub Mkey_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        '
+        ' Liest die Ini /// Unterpunkte beachten
+        '
+        '
+        ' 1) Sprache auslesen
+        '
+        Dim readLANG = ReadIni(File, Section_lang, lang, "")
+        '
+        ' 2) Übersetzungen anwenden
+        ' 
+        If readLANG = "deDE" Then
+            ' Übersetzungen // DEUTSCH/GERMAN
+            Label1.Text = "Mehrere Keys hinzufügen"
+            Button1.Text = "Keys hinzufügen"
+        End If
+        If readLANG = "enUS" Then
+            ' Translations // ENGLISCH/ENGLISH
+            Label1.Text = "Add several Keys"
+            Button1.Text = "Add Keys"
+        End If
     End Sub
 End Class

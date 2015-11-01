@@ -1,4 +1,5 @@
-﻿Public Class gaway
+﻿Imports System.IO
+Public Class gaway
     '                               __
     '                             .d$$b		          _..::::::.._
     '                           .' TO$;\		    .::::::::::::::.
@@ -133,8 +134,8 @@
         '
         ' Prüft vor beginn nach vorhandenen Updates!
         '
-        TestInternetConnection()
-        RunUpdate()
+        'TestInternetConnection()
+        'RunUpdate()
         '
         ' Startet normal weiter, wenn keine Updates vorhanden sind
         '

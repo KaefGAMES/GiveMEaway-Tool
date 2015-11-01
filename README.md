@@ -1,4 +1,5 @@
 # GiveMEaway-Tool by KaefGAMES-Entertainment
+![TravisCI](https://travis-ci.org/KaefGAMES/GiveMEaway-Tool.svg)
 Hilft ggf. Streamern eines Tages dabei, Ihre GiveAways zu organisieren. 
 Funktioniert auf hitbox.tv und auf twitch.tv gleichermaßen...welch Revolution. :D
 

@@ -44,14 +44,97 @@
     Dim gawayversion As String = "0.0.7"
     Dim Web As New Net.WebClient()
     '
+    ' Lädt übersetzungen
+    '
+    Dim File = Application.StartupPath + "\away.ini"
+    '
+    ' Bestimmt die Sektionen in der .ini
+    '
+    Dim Section_lang = "Language"
+    Dim Section_host = "Host"
+    Dim Section_sounds = "Sounds"
+    '
+    ' Bestimmt die "Unterpunkte" in der .ini
+    '
+    Dim lang = "lang"
+    Dim chost = "channel_host"
+    Dim psounds = "play_sounds"
+    '
     ' Aktionen die beim Start geladen/ausgeführt werden sollen
     '
     Private Sub gaway_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         '
+        ' Übersetzungen
+        '
+        '
+        ' Liest die Ini /// Unterpunkte beachten
+        '
+        '
+        ' 1) Sprache auslesen
+        '
+        Dim readLANG = ReadIni(File, Section_lang, lang, "")
+        '
+        ' 2) Übersetzungen anwenden
+        ' 
+        If readLANG = "deDE" Then
+            ' Übersetzungen // DEUTSCH/GERMAN
+            addkey.Text = "Key hinzufügen"
+            remkey.Text = "Key entfernen"
+            clearlist.Text = "Liste leeren"
+            copytoclip.Text = "Auswahl kopieren"
+            opensettings.Text = "Einstellungen"
+            ' Überschriften
+            typekeyhere.Text = "Key hier eintippen:"
+            avkeystxt.Text = "Verfügbare Keys:"
+            ' Tooltips (Titel)
+            addkeytooltip.ToolTipTitle = "So funktioniert's:"
+            remkeytooltip.ToolTipTitle = "So funktioniert's:"
+            remlist.ToolTipTitle = "So funktioniert's:"
+            keyboxtooltip.ToolTipTitle = "So funktioniert's:"
+            playsoundtooltip.ToolTipTitle = "So funktioniert's:"
+            copytoclipb.ToolTipTitle = "So funktioniert's:"
+            randomtooltip.ToolTipTitle = "So funktioniert's:"
+            ' Tooltips (Text)
+            addkeytooltip.SetToolTip(addkey, "Fügt einen neuen Key aus der Textbox zur Liste hinzu." + vbNewLine + "Speichert die Liste anschließend in der Keys.txt")
+            remkeytooltip.SetToolTip(remkey, "Entfernt die aktuelle Auswahl aus der Liste und aus der Keys.txt")
+            remlist.SetToolTip(clearlist, "Leert die komplette Liste.")
+            copytoclipb.SetToolTip(copytoclip, "Kopiert deine Auswahl aus der Liste in die Zwischenablage. (STRG+C)")
+            keyboxtooltip.SetToolTip(keybox, "Tippe deinen Key hier ein um Ihn der Liste hinzuzufügen.")
+            playsoundtooltip.SetToolTip(playsound, "Spielt den 'standard' Sound ab. (Siehe dazu: Sounds\default.wav)")
+            randomtooltip.SetToolTip(chooserandom, "Wählt einen zufälligen Key aus der Liste aus und spielt dabei einen Sound ab." + vbNewLine + "Der ausgewählte Key wird direkt in die Zwischenablage (STRG+C) kopiert und kann verschickt werden." + vbNewLine + " " + vbNewLine + "ACHTUNG: Der Inhalt der Liste darf nicht leer sein!")
+        End If
+        If readLANG = "enUS" Then
+            ' Translations // ENGLISCH/ENGLISH
+            addkey.Text = "Add Key"
+            remkey.Text = "Remove Key"
+            clearlist.Text = "Clear List"
+            copytoclip.Text = "Copy selection"
+            opensettings.Text = "Settings"
+            ' Headlines
+            typekeyhere.Text = "Enter new Key here:"
+            avkeystxt.Text = "Aviable Keys:"
+            ' Tooltips (Title)
+            addkeytooltip.ToolTipTitle = "How this works:"
+            remkeytooltip.ToolTipTitle = "How this works:"
+            remlist.ToolTipTitle = "How this works:"
+            keyboxtooltip.ToolTipTitle = "How this works:"
+            playsoundtooltip.ToolTipTitle = "How this works:"
+            copytoclipb.ToolTipTitle = "How this works:"
+            randomtooltip.ToolTipTitle = "How this works:"
+            ' Tooltips (Text)
+            addkeytooltip.SetToolTip(addkey, "Adds a new Key from the Textbox into the list." + vbNewLine + "The new list gets saved afterwards into the Keys.txt")
+            remkeytooltip.SetToolTip(remkey, "Removes the selection from the list and saves afterwards")
+            remlist.SetToolTip(clearlist, "Clears the list.")
+            copytoclipb.SetToolTip(copytoclip, "Copys the selection from the list into your clipboard. (CTRL + C)")
+            keyboxtooltip.SetToolTip(keybox, "Enter your Key here to add him into the list.")
+            playsoundtooltip.SetToolTip(playsound, "Play's the 'default' Soundtrack. (Look here: Sounds\default.wav)")
+            randomtooltip.SetToolTip(chooserandom, "Chooses a random Key from the list and play a Sound. (Default = on)." + vbNewLine + "The choosen Key is directly in your clipboard (CTRL + C) and you can send him to the winner." + vbNewLine + " " + vbNewLine + "ATTENTION: The list can not be empty!")
+        End If
+        '
         ' Prüft vor beginn nach vorhandenen Updates!
         '
-        'TestInternetConnection()
-        'RunUpdate()
+        TestInternetConnection()
+        RunUpdate()
         '
         ' Startet normal weiter, wenn keine Updates vorhanden sind
         '
@@ -141,7 +224,7 @@
         IO.File.WriteAllLines(inputFile, aviablekeys.Items.Cast(Of String).ToArray)
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub clearlist_Click(sender As Object, e As EventArgs) Handles clearlist.Click
         '
         ' Löscht die komplette Liste
         '

@@ -26,24 +26,24 @@ Partial Class gaway
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(gaway))
         Me.playsound = New System.Windows.Forms.Button()
         Me.keybox = New System.Windows.Forms.TextBox()
-        Me.Label1 = New System.Windows.Forms.Label()
+        Me.typekeyhere = New System.Windows.Forms.Label()
         Me.addkey = New System.Windows.Forms.Button()
-        Me.Label2 = New System.Windows.Forms.Label()
+        Me.avkeystxt = New System.Windows.Forms.Label()
         Me.remkey = New System.Windows.Forms.Button()
         Me.version = New System.Windows.Forms.Label()
         Me.aviablekeys = New System.Windows.Forms.ListBox()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.clearlist = New System.Windows.Forms.Button()
         Me.copytoclip = New System.Windows.Forms.Button()
         Me.chooserandom = New System.Windows.Forms.Button()
         Me.randomtooltip = New System.Windows.Forms.ToolTip(Me.components)
         Me.copytoclipb = New System.Windows.Forms.ToolTip(Me.components)
+        Me.opensettings = New System.Windows.Forms.Button()
         Me.remlist = New System.Windows.Forms.ToolTip(Me.components)
         Me.playsoundtooltip = New System.Windows.Forms.ToolTip(Me.components)
         Me.remkeytooltip = New System.Windows.Forms.ToolTip(Me.components)
         Me.addkeytooltip = New System.Windows.Forms.ToolTip(Me.components)
         Me.keyboxtooltip = New System.Windows.Forms.ToolTip(Me.components)
         Me.plusbtt = New System.Windows.Forms.Button()
-        Me.opensettings = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'playsound
@@ -64,14 +64,14 @@ Partial Class gaway
         Me.keybox.TabIndex = 1
         Me.keyboxtooltip.SetToolTip(Me.keybox, "Tippe deinen Key hier ein um Ihn der Liste hinzuzufügen.")
         '
-        'Label1
+        'typekeyhere
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(146, 15)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(94, 13)
-        Me.Label1.TabIndex = 2
-        Me.Label1.Text = "Key hier eintippen:"
+        Me.typekeyhere.AutoSize = True
+        Me.typekeyhere.Location = New System.Drawing.Point(146, 15)
+        Me.typekeyhere.Name = "typekeyhere"
+        Me.typekeyhere.Size = New System.Drawing.Size(94, 13)
+        Me.typekeyhere.TabIndex = 2
+        Me.typekeyhere.Text = "Key hier eintippen:"
         '
         'addkey
         '
@@ -84,14 +84,14 @@ Partial Class gaway
         "ießend in der Keys.txt")
         Me.addkey.UseVisualStyleBackColor = True
         '
-        'Label2
+        'avkeystxt
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(13, 152)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(88, 13)
-        Me.Label2.TabIndex = 6
-        Me.Label2.Text = "Verfügbare Keys:"
+        Me.avkeystxt.AutoSize = True
+        Me.avkeystxt.Location = New System.Drawing.Point(13, 152)
+        Me.avkeystxt.Name = "avkeystxt"
+        Me.avkeystxt.Size = New System.Drawing.Size(88, 13)
+        Me.avkeystxt.TabIndex = 6
+        Me.avkeystxt.Text = "Verfügbare Keys:"
         '
         'remkey
         '
@@ -122,15 +122,15 @@ Partial Class gaway
         Me.aviablekeys.Size = New System.Drawing.Size(417, 303)
         Me.aviablekeys.TabIndex = 13
         '
-        'Button1
+        'clearlist
         '
-        Me.Button1.Location = New System.Drawing.Point(12, 114)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(127, 22)
-        Me.Button1.TabIndex = 14
-        Me.Button1.Text = "Liste leeren"
-        Me.remlist.SetToolTip(Me.Button1, "Leert die komplette Liste.")
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.clearlist.Location = New System.Drawing.Point(12, 114)
+        Me.clearlist.Name = "clearlist"
+        Me.clearlist.Size = New System.Drawing.Size(127, 22)
+        Me.clearlist.TabIndex = 14
+        Me.clearlist.Text = "Liste leeren"
+        Me.remlist.SetToolTip(Me.clearlist, "Leert die komplette Liste.")
+        Me.clearlist.UseVisualStyleBackColor = True
         '
         'copytoclip
         '
@@ -161,6 +161,16 @@ Partial Class gaway
         '
         Me.copytoclipb.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info
         Me.copytoclipb.ToolTipTitle = "So funktioniert's:"
+        '
+        'opensettings
+        '
+        Me.opensettings.Location = New System.Drawing.Point(301, 114)
+        Me.opensettings.Name = "opensettings"
+        Me.opensettings.Size = New System.Drawing.Size(127, 22)
+        Me.opensettings.TabIndex = 18
+        Me.opensettings.Text = "Einstellungen"
+        Me.copytoclipb.SetToolTip(Me.opensettings, "Kopiert deine Auswahl aus der Liste in die Zwischenablage. (STRG+C)")
+        Me.opensettings.UseVisualStyleBackColor = True
         '
         'remlist
         '
@@ -196,16 +206,6 @@ Partial Class gaway
         Me.plusbtt.Text = "+"
         Me.plusbtt.UseVisualStyleBackColor = True
         '
-        'opensettings
-        '
-        Me.opensettings.Location = New System.Drawing.Point(301, 114)
-        Me.opensettings.Name = "opensettings"
-        Me.opensettings.Size = New System.Drawing.Size(127, 22)
-        Me.opensettings.TabIndex = 18
-        Me.opensettings.Text = "Einstellungen"
-        Me.copytoclipb.SetToolTip(Me.opensettings, "Kopiert deine Auswahl aus der Liste in die Zwischenablage. (STRG+C)")
-        Me.opensettings.UseVisualStyleBackColor = True
-        '
         'gaway
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -216,13 +216,13 @@ Partial Class gaway
         Me.Controls.Add(Me.plusbtt)
         Me.Controls.Add(Me.chooserandom)
         Me.Controls.Add(Me.copytoclip)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.clearlist)
         Me.Controls.Add(Me.aviablekeys)
         Me.Controls.Add(Me.version)
         Me.Controls.Add(Me.remkey)
-        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.avkeystxt)
         Me.Controls.Add(Me.addkey)
-        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.typekeyhere)
         Me.Controls.Add(Me.keybox)
         Me.Controls.Add(Me.playsound)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
@@ -239,13 +239,13 @@ Partial Class gaway
 
     Friend WithEvents playsound As Button
     Friend WithEvents keybox As TextBox
-    Friend WithEvents Label1 As Label
+    Friend WithEvents typekeyhere As Label
     Friend WithEvents addkey As Button
-    Friend WithEvents Label2 As Label
+    Friend WithEvents avkeystxt As Label
     Friend WithEvents remkey As Button
     Friend WithEvents version As Label
     Friend WithEvents aviablekeys As ListBox
-    Friend WithEvents Button1 As Button
+    Friend WithEvents clearlist As Button
     Friend WithEvents copytoclip As Button
     Friend WithEvents chooserandom As Button
     Friend WithEvents randomtooltip As ToolTip

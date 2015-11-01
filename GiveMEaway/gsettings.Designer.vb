@@ -22,16 +22,17 @@ Partial Class gsettings
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(gsettings))
         Me.save = New System.Windows.Forms.Button()
         Me.TabControl = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.langEN = New System.Windows.Forms.CheckBox()
         Me.langDE = New System.Windows.Forms.CheckBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
-        Me.TabPage3 = New System.Windows.Forms.TabPage()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.TabPage3 = New System.Windows.Forms.TabPage()
         Me.TabControl.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
@@ -69,6 +70,15 @@ Partial Class gsettings
         Me.TabPage1.Size = New System.Drawing.Size(364, 206)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Sprache / Language"
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Enabled = False
+        Me.TextBox1.Location = New System.Drawing.Point(6, 134)
+        Me.TextBox1.Multiline = True
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(352, 66)
+        Me.TextBox1.TabIndex = 3
         '
         'langEN
         '
@@ -109,24 +119,6 @@ Partial Class gsettings
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Anbieter / Host"
         '
-        'TabPage3
-        '
-        Me.TabPage3.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage3.Name = "TabPage3"
-        Me.TabPage3.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage3.Size = New System.Drawing.Size(364, 206)
-        Me.TabPage3.TabIndex = 2
-        Me.TabPage3.Text = "Sounds"
-        '
-        'TextBox1
-        '
-        Me.TextBox1.Enabled = False
-        Me.TextBox1.Location = New System.Drawing.Point(6, 134)
-        Me.TextBox1.Multiline = True
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(352, 66)
-        Me.TextBox1.TabIndex = 3
-        '
         'TextBox2
         '
         Me.TextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None
@@ -139,6 +131,15 @@ Partial Class gsettings
         Me.TextBox2.Text = "Noch nicht verfügbar!"
         Me.TextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
+        'TabPage3
+        '
+        Me.TabPage3.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage3.Name = "TabPage3"
+        Me.TabPage3.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage3.Size = New System.Drawing.Size(364, 206)
+        Me.TabPage3.TabIndex = 2
+        Me.TabPage3.Text = "Sounds"
+        '
         'gsettings
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -146,8 +147,9 @@ Partial Class gsettings
         Me.ClientSize = New System.Drawing.Size(397, 285)
         Me.Controls.Add(Me.TabControl)
         Me.Controls.Add(Me.save)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "gsettings"
-        Me.Text = "gsettings"
+        Me.Text = "GiveMEsettings"
         Me.TabControl.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()

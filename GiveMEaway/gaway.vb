@@ -42,7 +42,7 @@ Public Class gaway
     '
     '
     Private Const versionURL = "http://81.169.254.242/gaway/current_ver.txt"
-    Dim gawayversion As String = "0.0.7"
+    Dim gawayversion As String = "0.0.8"
     Dim Web As New Net.WebClient()
     '
     ' Lädt übersetzungen

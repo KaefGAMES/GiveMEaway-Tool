@@ -110,7 +110,7 @@ Partial Class gaway
         Me.version.Name = "version"
         Me.version.Size = New System.Drawing.Size(154, 13)
         Me.version.TabIndex = 11
-        Me.version.Text = "Version 0.0.7 - Stable Any CPU"
+        Me.version.Text = "Version 0.0.8 - Stable Any CPU"
         '
         'aviablekeys
         '

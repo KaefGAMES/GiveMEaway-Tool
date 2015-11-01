@@ -28,7 +28,7 @@
     '
     ' 
     ' Url von welcher der Download stattfinden wird.
-    Private Const targetURL = "http://81.169.254.242/gaway/GiveMEaway.exe"
+    Private Const targetURL = "http://81.169.254.242/gaway/GiveMEaway.rar"
     '
     ' Deklaration
     ' Downloadbtt = Download Starten Button
@@ -47,7 +47,7 @@
     '
     Private Sub Downloadbtt_Click(sender As Object, e As EventArgs) Handles Downloadbtt.Click
         If IO.File.Exists(Environment.CurrentDirectory + "\GiveMEaway.exe") Then IO.File.Delete(Environment.CurrentDirectory + "\GiveMEaway.exe")
-        wc.DownloadFileAsync(New Uri(targetURL), Environment.CurrentDirectory + "\GiveMEaway.exe")
+        wc.DownloadFileAsync(New Uri(targetURL), Environment.CurrentDirectory + "\GiveMEaway.rar")
 
         cancelbtt.Enabled = True
         Downloadbtt.Enabled = False
@@ -61,11 +61,10 @@
         pbar.Value = e.ProgressPercentage
     End Sub
     Private Sub wc_DownloadFileCompleted(sender As Object, e As System.ComponentModel.AsyncCompletedEventArgs) Handles wc.DownloadFileCompleted
-        MsgBox("Du hast jetzt die aktuellste Version von GiveMEaway.", MsgBoxStyle.Information, "GiveMEupdate - Download abgeschlossen!")
+        MsgBox("Du hast jetzt die aktuellste Version von GiveMEaway. Bitte entpacke die heruntergeladene Datei in das gleiche Verzeichnis von GiveMEaway!", MsgBoxStyle.Information, "GiveMEupdate - Download abgeschlossen!")
         pbar.Value = 0
         Cancelbtt.Enabled = False
         Downloadbtt.Enabled = True
-        Process.Start("GiveMEaway.exe")
         Me.Close()
     End Sub
     '
@@ -78,7 +77,7 @@
 
         pbar.Value = 0
 
-        If IO.File.Exists(Environment.CurrentDirectory + "\GiveMEaway.exe") Then IO.File.Delete(Environment.CurrentDirectory + "\GiveMEaway.exe")
+        If IO.File.Exists(Environment.CurrentDirectory + "\GiveMEaway.rar") Then IO.File.Delete(Environment.CurrentDirectory + "\GiveMEaway.rar")
         cancelbtt.Enabled = False
         Downloadbtt.Enabled = True
     End Sub

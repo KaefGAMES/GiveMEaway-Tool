@@ -33,9 +33,13 @@ Partial Class gsettings
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
+        Me.playsyes = New System.Windows.Forms.CheckBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.playsno = New System.Windows.Forms.CheckBox()
         Me.TabControl.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
+        Me.TabPage3.SuspendLayout()
         Me.SuspendLayout()
         '
         'save
@@ -133,12 +137,44 @@ Partial Class gsettings
         '
         'TabPage3
         '
+        Me.TabPage3.Controls.Add(Me.playsno)
+        Me.TabPage3.Controls.Add(Me.Label2)
+        Me.TabPage3.Controls.Add(Me.playsyes)
         Me.TabPage3.Location = New System.Drawing.Point(4, 22)
         Me.TabPage3.Name = "TabPage3"
         Me.TabPage3.Padding = New System.Windows.Forms.Padding(3)
         Me.TabPage3.Size = New System.Drawing.Size(364, 206)
         Me.TabPage3.TabIndex = 2
         Me.TabPage3.Text = "Sounds"
+        '
+        'playsyes
+        '
+        Me.playsyes.AutoSize = True
+        Me.playsyes.Location = New System.Drawing.Point(10, 36)
+        Me.playsyes.Name = "playsyes"
+        Me.playsyes.Size = New System.Drawing.Size(47, 17)
+        Me.playsyes.TabIndex = 0
+        Me.playsyes.Text = "YES"
+        Me.playsyes.UseVisualStyleBackColor = True
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(7, 7)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(151, 13)
+        Me.Label2.TabIndex = 1
+        Me.Label2.Text = "Sound abspielen / Play Sound"
+        '
+        'playsno
+        '
+        Me.playsno.AutoSize = True
+        Me.playsno.Location = New System.Drawing.Point(10, 59)
+        Me.playsno.Name = "playsno"
+        Me.playsno.Size = New System.Drawing.Size(42, 17)
+        Me.playsno.TabIndex = 2
+        Me.playsno.Text = "NO"
+        Me.playsno.UseVisualStyleBackColor = True
         '
         'gsettings
         '
@@ -148,6 +184,9 @@ Partial Class gsettings
         Me.Controls.Add(Me.TabControl)
         Me.Controls.Add(Me.save)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.MaximizeBox = False
+        Me.MaximumSize = New System.Drawing.Size(413, 324)
+        Me.MinimumSize = New System.Drawing.Size(413, 324)
         Me.Name = "gsettings"
         Me.Text = "GiveMEsettings"
         Me.TabControl.ResumeLayout(False)
@@ -155,6 +194,8 @@ Partial Class gsettings
         Me.TabPage1.PerformLayout()
         Me.TabPage2.ResumeLayout(False)
         Me.TabPage2.PerformLayout()
+        Me.TabPage3.ResumeLayout(False)
+        Me.TabPage3.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -169,4 +210,7 @@ Partial Class gsettings
     Friend WithEvents langDE As CheckBox
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents Label2 As Label
+    Friend WithEvents playsyes As CheckBox
+    Friend WithEvents playsno As CheckBox
 End Class

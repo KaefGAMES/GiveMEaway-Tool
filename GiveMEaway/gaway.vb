@@ -133,8 +133,8 @@
         '
         ' Prüft vor beginn nach vorhandenen Updates!
         '
-        TestInternetConnection()
-        RunUpdate()
+        'TestInternetConnection()
+        'RunUpdate()
         '
         ' Startet normal weiter, wenn keine Updates vorhanden sind
         '
@@ -213,7 +213,20 @@
     ' Spielt den mitgelieferten Sound ab. Sounddatei kann und sollte angepasst werden...es sei denn man mag den Sound! Dann sollte hier nix geändert werden. ;)
     '
     Private Sub playsound_Click(sender As Object, e As EventArgs) Handles playsound.Click
-        My.Computer.Audio.Play(Environment.CurrentDirectory + "\Sounds\default.wav", AudioPlayMode.Background)
+        ' Lese Konfiguration
+        Dim readSOUND = ReadIni(File, Section_sounds, psounds, "")
+        Dim readLANG = ReadIni(File, Section_lang, lang, "")
+        '
+        '
+        If readSOUND = "1" Then
+            My.Computer.Audio.Play(Environment.CurrentDirectory + "\Sounds\default.wav", AudioPlayMode.Background)
+        End If
+        If readSOUND = "0" And readLANG = "deDE" Then
+            MessageBox.Show("Sounds sind nicht aktiviert!", "GiveMEaway - Fehler!")
+        End If
+        If readSOUND = "0" And readLANG = "enUS" Then
+            MessageBox.Show("Sounds are not activated!", "GiveMEaway - Fehler!")
+        End If
     End Sub
     Private Sub remkey_Click(sender As Object, e As EventArgs) Handles remkey.Click
         '
@@ -241,19 +254,66 @@
     End Sub
 
     Private Sub chooserandom_Click(sender As Object, e As EventArgs) Handles chooserandom.Click
+        ' Lese Konfiguration
+        Dim readSOUND = ReadIni(File, Section_sounds, psounds, "")
+        Dim readLANG = ReadIni(File, Section_lang, lang, "")
         '
         ' Wählt eine zufällige Zeile in der Liste aus und speichert das Ergebnis in der Zwischenablage (STRG + C)
         '
-        '
-        If aviablekeys.Items.Count = 0 Then
+        If aviablekeys.Items.Count = 0 And readLANG = "deDE" Then
             MessageBox.Show("Die Liste darf nicht leer sein.", "GiveMEaway - Fehler!")
             Exit Sub
         Else
-            My.Computer.Audio.Play(Environment.CurrentDirectory + "\Sounds\random.wav", AudioPlayMode.Background)
-            Dim rnd As New Random
-            Dim randomIndex As Integer = rnd.Next(0, aviablekeys.Items.Count - 1)
-            MessageBox.Show("Es ist: " + aviablekeys.Items(randomIndex), "GiveMEaway - GiveMErandom Ergebnis")
-            My.Computer.Clipboard.SetText(aviablekeys.Items(randomIndex))
+            If readSOUND = "1" And readLANG = "deDE" Then
+                My.Computer.Audio.Play(Environment.CurrentDirectory + "\Sounds\random.wav", AudioPlayMode.Background)
+                Dim rnd As New Random
+                Dim randomIndex As Integer = rnd.Next(0, aviablekeys.Items.Count - 1)
+                MessageBox.Show("Es ist: " + aviablekeys.Items(randomIndex), "GiveMEaway - GiveMErandom Ergebnis")
+                My.Computer.Clipboard.SetText(aviablekeys.Items(randomIndex))
+                Exit Sub
+            End If
+        End If
+        '
+        If aviablekeys.Items.Count = 0 And readLANG = "deDE" Then
+            MessageBox.Show("Die Liste darf nicht leer sein.", "GiveMEaway - Fehler!")
+            Exit Sub
+        Else
+            If readSOUND = "0" And readLANG = "deDE" Then
+                Dim rnd As New Random
+                Dim randomIndex As Integer = rnd.Next(0, aviablekeys.Items.Count - 1)
+                MessageBox.Show("Es ist: " + aviablekeys.Items(randomIndex), "GiveMEaway - GiveMErandom Ergebnis")
+                My.Computer.Clipboard.SetText(aviablekeys.Items(randomIndex))
+                Exit Sub
+            End If
+        End If
+        '
+        ' Englisch / English
+        '
+        If aviablekeys.Items.Count = 0 And readLANG = "enUS" Then
+            MessageBox.Show("The list cannot be empty.", "GiveMEaway - Error!")
+            Exit Sub
+        Else
+            If readSOUND = "1" And readLANG = "enUS" Then
+                My.Computer.Audio.Play(Environment.CurrentDirectory + "\Sounds\random.wav", AudioPlayMode.Background)
+                Dim rnd As New Random
+                Dim randomIndex As Integer = rnd.Next(0, aviablekeys.Items.Count - 1)
+                MessageBox.Show("It's: " + aviablekeys.Items(randomIndex), "GiveMEaway - GiveMErandom Result")
+                My.Computer.Clipboard.SetText(aviablekeys.Items(randomIndex))
+                Exit Sub
+            End If
+        End If
+        '
+        If aviablekeys.Items.Count = 0 And readLANG = "enUS" Then
+            MessageBox.Show("The list cannot be empty.", "GiveMEaway - Error!")
+            Exit Sub
+        Else
+            If readSOUND = "0" And readLANG = "enUS" Then
+                Dim rnd As New Random
+                Dim randomIndex As Integer = rnd.Next(0, aviablekeys.Items.Count - 1)
+                MessageBox.Show("It's: " + aviablekeys.Items(randomIndex), "GiveMEaway - GiveMErandom Result")
+                My.Computer.Clipboard.SetText(aviablekeys.Items(randomIndex))
+                Exit Sub
+            End If
         End If
     End Sub
 

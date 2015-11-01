@@ -68,6 +68,10 @@ Public Class gsettings
             langEN.Text = "Englisch"
             ' Übersetzungen // TAB ANBIETER
             TextBox2.Text = "Noch nicht verfügbar!"
+            ' Übersetzungen // TAB SOUND
+            Label2.Text = "Sound Einstellungen"
+            playsyes.Text = "Sounds abspielen"
+            playsno.Text = "Keine Sounds abspielen"
         End If
         If readLANG = "enUS" Then
             langEN.Checked = True
@@ -81,6 +85,24 @@ Public Class gsettings
             langEN.Text = "English"
             ' Translations // TAB HOST
             TextBox2.Text = "Not yet aviable!"
+            ' Übersetzungen // TAB SOUND
+            Label2.Text = "Sound Settings"
+            playsyes.Text = "Play Sounds"
+            playsno.Text = "Don't play Sounds"
+        End If
+        '
+        ' Lese Sound-Einstellungen
+        '
+        Dim readSOUND = ReadIni(File, Section_sounds, psounds, "")
+        ' Wenn aktiviert
+        If readSOUND = "1" Then
+            playsyes.Checked = True
+            playsno.Enabled = False
+        End If
+        ' Wenn deaktiviert
+        If readSOUND = "0" Then
+            playsyes.Enabled = False
+            playsno.Checked = True
         End If
     End Sub
 
@@ -116,6 +138,32 @@ Public Class gsettings
         End If
         If langEN.Checked = False Then
             langDE.Enabled = True
+        End If
+    End Sub
+
+    Private Sub playsyes_CheckedChanged(sender As Object, e As EventArgs) Handles playsyes.CheckedChanged
+        If playsyes.Checked = True Then
+            playsno.Enabled = False
+            '
+            ' Schreibt die Ini
+            '
+            writeIni(File, Section_sounds, psounds, "1")
+        End If
+        If playsyes.Checked = False Then
+            playsno.Enabled = True
+        End If
+    End Sub
+
+    Private Sub playsno_CheckedChanged(sender As Object, e As EventArgs) Handles playsno.CheckedChanged
+        If playsno.Checked = True Then
+            playsyes.Enabled = False
+            '
+            ' Schreibt die Ini
+            '
+            writeIni(File, Section_sounds, psounds, "0")
+        End If
+        If playsno.Checked = False Then
+            playsyes.Enabled = True
         End If
     End Sub
 End Class

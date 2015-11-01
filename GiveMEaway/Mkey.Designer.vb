@@ -106,7 +106,6 @@ Partial Class Mkey
         Me.MinimizeBox = False
         Me.MinimumSize = New System.Drawing.Size(381, 282)
         Me.Name = "Mkey"
-        Me.ShowInTaskbar = False
         Me.Text = "GiveMEaway - GoMultiline"
         Me.ResumeLayout(False)
         Me.PerformLayout()

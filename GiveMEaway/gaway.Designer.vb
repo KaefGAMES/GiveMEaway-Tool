@@ -169,7 +169,6 @@ Partial Class gaway
         Me.opensettings.Size = New System.Drawing.Size(127, 22)
         Me.opensettings.TabIndex = 18
         Me.opensettings.Text = "Einstellungen"
-        Me.copytoclipb.SetToolTip(Me.opensettings, "Kopiert deine Auswahl aus der Liste in die Zwischenablage. (STRG+C)")
         Me.opensettings.UseVisualStyleBackColor = True
         '
         'remlist

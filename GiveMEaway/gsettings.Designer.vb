@@ -186,6 +186,7 @@ Partial Class gsettings
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.MaximumSize = New System.Drawing.Size(413, 324)
+        Me.MinimizeBox = False
         Me.MinimumSize = New System.Drawing.Size(413, 324)
         Me.Name = "gsettings"
         Me.Text = "GiveMEsettings"

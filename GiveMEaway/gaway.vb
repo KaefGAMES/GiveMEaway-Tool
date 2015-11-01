@@ -225,7 +225,7 @@
             MessageBox.Show("Sounds sind nicht aktiviert!", "GiveMEaway - Fehler!")
         End If
         If readSOUND = "0" And readLANG = "enUS" Then
-            MessageBox.Show("Sounds are not activated!", "GiveMEaway - Fehler!")
+            MessageBox.Show("Sounds are not activated!", "GiveMEaway - Error!")
         End If
     End Sub
     Private Sub remkey_Click(sender As Object, e As EventArgs) Handles remkey.Click

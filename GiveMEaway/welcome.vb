@@ -34,6 +34,18 @@
     Private Const versionURL = "http://81.169.254.242/gaway/current_ver.txt"
     Dim gawayversion As String = "0.0.8"
     Dim Web As New Net.WebClient()
+    '
+    ' Lädt übersetzungen
+    '
+    Dim File = Application.StartupPath + "\away.ini"
+    '
+    ' Bestimmt die Sektionen in der .ini
+    '
+    Dim Section_lang = "Language"
+    '
+    ' Bestimmt die "Unterpunkte" in der .ini
+    '
+    Dim lang = "lang"
     Private Sub welcome_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         '
         ' Wartetezeit für den "OK" Button
@@ -49,18 +61,6 @@
         '
         ' Startet normal weiter, wenn keine Updates vorhanden sind
         '
-        '
-        ' Lädt übersetzungen
-        '
-        Dim File = Application.StartupPath + "\away.ini"
-        '
-        ' Bestimmt die Sektionen in der .ini
-        '
-        Dim Section_lang = "Language"
-        '
-        ' Bestimmt die "Unterpunkte" in der .ini
-        '
-        Dim lang = "lang"
         '
         ' Übersetzungen
         '

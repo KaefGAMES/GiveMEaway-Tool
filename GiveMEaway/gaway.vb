@@ -39,11 +39,6 @@
     ' copytoclip = Auswahl in Zwischenablage kopieren (STRG + C)
     '
     '
-    '
-    Private Const versionURL = "http://81.169.254.242/gaway/current_ver.txt"
-    Dim gawayversion As String = "0.0.8"
-    Dim Web As New Net.WebClient()
-    '
     ' Lädt übersetzungen
     '
     Dim File = Application.StartupPath + "\away.ini"
@@ -130,16 +125,6 @@
             playsoundtooltip.SetToolTip(playsound, "Play's the 'default' Soundtrack. (Look here: Sounds\default.wav)")
             randomtooltip.SetToolTip(chooserandom, "Chooses a random Key from the list and play a Sound. (Default = on)." + vbNewLine + "The choosen Key is directly in your clipboard (CTRL + C) and you can send him to the winner." + vbNewLine + " " + vbNewLine + "ATTENTION: The list can not be empty!")
         End If
-        '
-        ' Prüft vor beginn nach vorhandenen Updates!
-        '
-        'TestInternetConnection()
-        'RunUpdate()
-        '
-        ' Startet normal weiter, wenn keine Updates vorhanden sind
-        '
-        MsgBox("Changelog #8" & vbNewLine & "" & vbNewLine & "- Es ist nun möglich, Einstellungen zur Sprache, zum Sound und später für die Anbieter/Hosts vorzunehmen." & vbNewLine & "" & vbNewLine & "- Die 'Multiline-Key'-Funktion, funktioniert nun und lässt Keys beginnend mit einem Buchstaben (z.B. E6K732-C037-1) zu." & vbNewLine & "" & vbNewLine & "- Das 'Multiline-Key'-Fenster taucht nun in der Taskleiste auf." & vbNewLine & "" & vbNewLine & "- Die Updater-Source kann nun eingesehen werden (siehe github)" & vbNewLine & "" & vbNewLine & "- Der Online-Versions-Check ist für diese Version kurzfristig de-aktiviert. Bitte behalte unsere Webseite im Auge um über neuere Versionen informiert zu bleiben!!!", MsgBoxStyle.Information, "GiveMEAway - Willkommen! :)")
-        MsgBox("Vielen Dank, dass du dich für unser kleines aber feines Tool zum Verwalten deiner GiveAway Keys entschieden hast." & vbNewLine & "" & vbNewLine & "Dieses Tool soll dich dabei unterstützen eine Liste von deinen Keys anzufertigen, für deinen aktuellen Livestream. Das Tool befindet sich noch in Entwicklung und Feedback ist gerne gesehen." & vbNewLine & "" & vbNewLine & "Besuche unsere Webseite für mehr Infos!" & vbNewLine & "www.käfgames.de", MsgBoxStyle.Information, "GiveMEAway - Willkommen! :)")
         '
         ' Bereitet das Laden der keys.txt als Liste vor
         '

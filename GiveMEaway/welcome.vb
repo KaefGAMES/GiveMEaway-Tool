@@ -67,11 +67,11 @@
         ' 
         If readLANG = "deDE" Then
             Label1.Text = "WILLKOMMEN"
-            changelog.Text = "Changelog #8" + vbNewLine + vbNewLine + "- Es ist nun möglich, Einstellungen zur Sprache, zum Sound und später für die Anbieter/Hosts vorzunehmen." + vbNewLine + "- Die 'Multiline-Key'-Funktion, funktioniert nun und lässt Keys beginnend mit einem Buchstaben (z.B. E6K732-C037-1) zu." + vbNewLine + "- Die Updater-Source kann nun eingesehen werden (siehe https://github.com/KaefGAMES/GiveMEaway-Tool)" + vbNewLine + "- Der Online-Versions-Check ist für diese Version kurzfristig de-aktiviert. Bitte behalte unsere Webseite im Auge um über neuere Versionen informiert zu bleiben!!!"
+            changelog.Text = "Vielen Dank, dass du dich für unser kleines aber feines Tool zum Verwalten deiner GiveAway Keys entschieden hast." + vbNewLine + vbNewLine + "Dieses Tool soll dich dabei unterstützen eine Liste von deinen Keys anzufertigen, für deinen aktuellen Livestream. Das Tool befindet sich noch in Entwicklung und Feedback ist gerne gesehen." + vbNewLine + vbNewLine + "Besuche unsere Webseite für mehr Infos!" + vbNewLine + vbNewLine + "------------------------------------------------------------------------------" + vbNewLine + vbNewLine + "Changelog #8" + vbNewLine + vbNewLine + "- Es ist nun möglich, Einstellungen zur Sprache, zum Sound und später für die Anbieter/Hosts vorzunehmen." + vbNewLine + vbNewLine + "- Die 'Multiline-Key'-Funktion, funktioniert nun und lässt Keys beginnend mit einem Buchstaben (z.B. E6K732-C037-1) zu." + vbNewLine + vbNewLine + "- Die Updater-Source kann nun eingesehen werden (siehe https://github.com/KaefGAMES/GiveMEaway-Tool)" + vbNewLine + vbNewLine + "- Der Online-Versions-Check ist für diese Version kurzfristig de-aktiviert. Bitte behalte unsere Webseite im Auge um über neuere Versionen informiert zu bleiben!!!"
         End If
         If readLANG = "enUS" Then
             Label1.Text = "WELCOME"
-            changelog.Text = "Changelog #8" + vbNewLine + vbNewLine + "- You can switch the language now in the brand NEW settings window" + vbNewLine + "- You can switch the sounds from 'On' to 'off' now...if ya want #pawsome" + vbNewLine + "- Fixed the mistake in 'Multiline-Key-Adding'-Window. :)" + vbNewLine + "- Disabled version-check in this build...sorry dudes you have to check the manual way if something changes. :/ (will be back in next version...)"
+            changelog.Text = "Thank you for choosing our small but nice tool for managing your giveaway Keys." + vbNewLine + vbNewLine + "This tool will help you to make a list of your keys for your current live stream. The tool is still in development and feedback is welcome." + vbNewLine + vbNewLine + "Visit us on our website for more informations!" + vbNewLine + vbNewLine + "------------------------------------------------------------------------------" + vbNewLine + vbNewLine + "Changelog #8" + vbNewLine + vbNewLine + "- You can switch the language now in the brand NEW settings window" + vbNewLine + vbNewLine + "- You can switch the sounds from 'On' to 'off' now...if ya want #pawsome" + vbNewLine + vbNewLine + "- Fixed the mistake in 'Multiline-Key-Adding'-Window. :)" + vbNewLine + vbNewLine + "- Disabled version-check in this build...sorry dudes you have to check the manual way if something changes. :/ (will be back in next version...)"
         End If
     End Sub
     Function TestInternetConnection()
@@ -114,7 +114,8 @@
         End If
     End Sub
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-
+        gaway.Show()
+        Me.Close()
     End Sub
 
     Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked

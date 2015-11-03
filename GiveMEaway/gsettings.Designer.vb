@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class gsettings
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,26 +20,23 @@ Partial Class gsettings
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(gsettings))
         Me.save = New System.Windows.Forms.Button()
         Me.TabControl = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.langEN = New System.Windows.Forms.CheckBox()
         Me.langDE = New System.Windows.Forms.CheckBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.TabPage3 = New System.Windows.Forms.TabPage()
-        Me.playsyes = New System.Windows.Forms.CheckBox()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.playsyes = New System.Windows.Forms.CheckBox()
         Me.playsno = New System.Windows.Forms.CheckBox()
         Me.TabControl.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
-        Me.TabPage3.SuspendLayout()
         Me.SuspendLayout()
         '
         'save
@@ -55,7 +52,6 @@ Partial Class gsettings
         '
         Me.TabControl.Controls.Add(Me.TabPage1)
         Me.TabControl.Controls.Add(Me.TabPage2)
-        Me.TabControl.Controls.Add(Me.TabPage3)
         Me.TabControl.Location = New System.Drawing.Point(13, 13)
         Me.TabControl.Name = "TabControl"
         Me.TabControl.SelectedIndex = 0
@@ -64,7 +60,9 @@ Partial Class gsettings
         '
         'TabPage1
         '
-        Me.TabPage1.Controls.Add(Me.TextBox1)
+        Me.TabPage1.Controls.Add(Me.playsno)
+        Me.TabPage1.Controls.Add(Me.playsyes)
+        Me.TabPage1.Controls.Add(Me.Label2)
         Me.TabPage1.Controls.Add(Me.langEN)
         Me.TabPage1.Controls.Add(Me.langDE)
         Me.TabPage1.Controls.Add(Me.Label1)
@@ -74,15 +72,6 @@ Partial Class gsettings
         Me.TabPage1.Size = New System.Drawing.Size(364, 206)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Sprache / Language"
-        '
-        'TextBox1
-        '
-        Me.TextBox1.Enabled = False
-        Me.TextBox1.Location = New System.Drawing.Point(6, 134)
-        Me.TextBox1.Multiline = True
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(352, 66)
-        Me.TextBox1.TabIndex = 3
         '
         'langEN
         '
@@ -135,44 +124,32 @@ Partial Class gsettings
         Me.TextBox2.Text = "Noch nicht verfügbar!"
         Me.TextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'TabPage3
+        'Label2
         '
-        Me.TabPage3.Controls.Add(Me.playsno)
-        Me.TabPage3.Controls.Add(Me.Label2)
-        Me.TabPage3.Controls.Add(Me.playsyes)
-        Me.TabPage3.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage3.Name = "TabPage3"
-        Me.TabPage3.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage3.Size = New System.Drawing.Size(364, 206)
-        Me.TabPage3.TabIndex = 2
-        Me.TabPage3.Text = "Sounds"
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(7, 98)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(38, 13)
+        Me.Label2.TabIndex = 3
+        Me.Label2.Text = "Sound"
         '
         'playsyes
         '
         Me.playsyes.AutoSize = True
-        Me.playsyes.Location = New System.Drawing.Point(10, 36)
+        Me.playsyes.Location = New System.Drawing.Point(10, 123)
         Me.playsyes.Name = "playsyes"
         Me.playsyes.Size = New System.Drawing.Size(47, 17)
-        Me.playsyes.TabIndex = 0
+        Me.playsyes.TabIndex = 4
         Me.playsyes.Text = "YES"
         Me.playsyes.UseVisualStyleBackColor = True
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(7, 7)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(151, 13)
-        Me.Label2.TabIndex = 1
-        Me.Label2.Text = "Sound abspielen / Play Sound"
         '
         'playsno
         '
         Me.playsno.AutoSize = True
-        Me.playsno.Location = New System.Drawing.Point(10, 59)
+        Me.playsno.Location = New System.Drawing.Point(10, 147)
         Me.playsno.Name = "playsno"
         Me.playsno.Size = New System.Drawing.Size(42, 17)
-        Me.playsno.TabIndex = 2
+        Me.playsno.TabIndex = 5
         Me.playsno.Text = "NO"
         Me.playsno.UseVisualStyleBackColor = True
         '
@@ -195,8 +172,6 @@ Partial Class gsettings
         Me.TabPage1.PerformLayout()
         Me.TabPage2.ResumeLayout(False)
         Me.TabPage2.PerformLayout()
-        Me.TabPage3.ResumeLayout(False)
-        Me.TabPage3.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -205,11 +180,9 @@ Partial Class gsettings
     Friend WithEvents TabControl As TabControl
     Friend WithEvents TabPage1 As TabPage
     Friend WithEvents TabPage2 As TabPage
-    Friend WithEvents TabPage3 As TabPage
     Friend WithEvents Label1 As Label
     Friend WithEvents langEN As CheckBox
     Friend WithEvents langDE As CheckBox
-    Friend WithEvents TextBox1 As TextBox
     Friend WithEvents TextBox2 As TextBox
     Friend WithEvents Label2 As Label
     Friend WithEvents playsyes As CheckBox

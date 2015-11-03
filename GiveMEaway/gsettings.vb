@@ -58,37 +58,37 @@ Public Class gsettings
         ' 
         If readLANG = "deDE" Then
             langDE.Checked = True
-            langEN.Enabled = False
+            langEN.Checked = False
             save.Text = "Speichern"
-            ' Übersetzungen // TAB SPRACHE
+            ' Übersetzungen // TAB ALLGEMEIN
             Label1.Text = "Wähle eine Sprache"
-            TabPage1.Text = "Sprache"
+            TabPage1.Text = "Allgemein"
             TabPage2.Text = "Anbieter"
             langDE.Text = "Deutsch"
             langEN.Text = "Englisch"
-            ' Übersetzungen // TAB ANBIETER
-            TextBox2.Text = "Noch nicht verfügbar!"
-            ' Übersetzungen // TAB SOUND
+            '
             Label2.Text = "Sound Einstellungen"
             playsyes.Text = "Sounds abspielen"
             playsno.Text = "Keine Sounds abspielen"
+            ' Übersetzungen // TAB ANBIETER
+            TextBox2.Text = "Noch nicht verfügbar!"
         End If
         If readLANG = "enUS" Then
             langEN.Checked = True
-            langDE.Enabled = False
+            langDE.Checked = False
             save.Text = "Save"
-            ' Translations // TAB LANG
+            ' Translations // TAB GENERAL
             Label1.Text = "Choose a Language"
-            TabPage1.Text = "Language"
+            TabPage1.Text = "General"
             TabPage2.Text = "Host"
             langDE.Text = "German"
             langEN.Text = "English"
-            ' Translations // TAB HOST
-            TextBox2.Text = "Not yet aviable!"
-            ' Übersetzungen // TAB SOUND
+            '
             Label2.Text = "Sound Settings"
             playsyes.Text = "Play Sounds"
             playsno.Text = "Don't play Sounds"
+            ' Translations // TAB HOST
+            TextBox2.Text = "Not yet aviable!"
         End If
         '
         ' Lese Sound-Einstellungen
@@ -97,11 +97,11 @@ Public Class gsettings
         ' Wenn aktiviert
         If readSOUND = "1" Then
             playsyes.Checked = True
-            playsno.Enabled = False
+            playsno.Checked = False
         End If
         ' Wenn deaktiviert
         If readSOUND = "0" Then
-            playsyes.Enabled = False
+            playsyes.Checked = False
             playsno.Checked = True
         End If
     End Sub
@@ -110,60 +110,59 @@ Public Class gsettings
         '
         ' Suggeriert, dass alles gespeichert wird ;D...Wird es aber schon vorher...MUHAHA!
         '
+        gaway.Show()
         Me.Close()
     End Sub
 
     Private Sub langDE_CheckedChanged(sender As Object, e As EventArgs) Handles langDE.CheckedChanged
         If langDE.Checked = True Then
-            langEN.Enabled = False
+            langEN.Checked = False
             '
             ' Schreibt die Ini
             '
             writeIni(File, Section_lang, lang, "deDE")
-            TextBox1.Text = "ACHTUNG:" + vbNewLine + "Das Ändern der Spracheinstellungen erfodert einen Neustart des Programmes!"
         End If
         If langDE.Checked = False Then
-            langEN.Enabled = True
+            langEN.Checked = True
         End If
     End Sub
 
     Private Sub langEN_CheckedChanged(sender As Object, e As EventArgs) Handles langEN.CheckedChanged
         If langEN.Checked = True Then
-            langDE.Enabled = False
+            langDE.Checked = False
             '
             ' Schreibt die Ini
             '
             writeIni(File, Section_lang, lang, "enUS")
-            TextBox1.Text = "ATTENTION:" + vbNewLine + "Changing the Language-Settings require a restart of the Programm!"
         End If
         If langEN.Checked = False Then
-            langDE.Enabled = True
+            langDE.Checked = True
         End If
     End Sub
 
-    Private Sub playsyes_CheckedChanged(sender As Object, e As EventArgs) Handles playsyes.CheckedChanged
+    Private Sub playsyes_CheckedChanged(sender As Object, e As EventArgs)
         If playsyes.Checked = True Then
-            playsno.Enabled = False
+            playsno.Checked = False
             '
             ' Schreibt die Ini
             '
             writeIni(File, Section_sounds, psounds, "1")
         End If
         If playsyes.Checked = False Then
-            playsno.Enabled = True
+            playsno.Checked = True
         End If
     End Sub
 
-    Private Sub playsno_CheckedChanged(sender As Object, e As EventArgs) Handles playsno.CheckedChanged
+    Private Sub playsno_CheckedChanged(sender As Object, e As EventArgs)
         If playsno.Checked = True Then
-            playsyes.Enabled = False
+            playsyes.Checked = False
             '
             ' Schreibt die Ini
             '
             writeIni(File, Section_sounds, psounds, "0")
         End If
         If playsno.Checked = False Then
-            playsyes.Enabled = True
+            playsyes.Checked = True
         End If
     End Sub
 End Class

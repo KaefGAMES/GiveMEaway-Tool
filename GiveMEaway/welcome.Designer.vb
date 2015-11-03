@@ -22,6 +22,7 @@ Partial Class welcome
     'Das Bearbeiten mit dem Code-Editor ist nicht möglich.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(welcome))
         Me.Button1 = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
@@ -32,6 +33,9 @@ Partial Class welcome
         Me.LinkLabel3 = New System.Windows.Forms.LinkLabel()
         Me.LinkLabel4 = New System.Windows.Forms.LinkLabel()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.timer = New System.Windows.Forms.Label()
+        Me.waittime = New System.Windows.Forms.Label()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -122,12 +126,40 @@ Partial Class welcome
         Me.Label2.TabIndex = 8
         Me.Label2.Text = "Version 0.0.8 - Stable Any CPU"
         '
+        'Timer1
+        '
+        Me.Timer1.Interval = 1000
+        '
+        'timer
+        '
+        Me.timer.AutoSize = True
+        Me.timer.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!)
+        Me.timer.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.timer.Location = New System.Drawing.Point(326, 323)
+        Me.timer.Name = "timer"
+        Me.timer.Size = New System.Drawing.Size(16, 18)
+        Me.timer.TabIndex = 10
+        Me.timer.Text = "0"
+        '
+        'waittime
+        '
+        Me.waittime.AutoSize = True
+        Me.waittime.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.waittime.Location = New System.Drawing.Point(33, 300)
+        Me.waittime.Name = "waittime"
+        Me.waittime.Size = New System.Drawing.Size(19, 13)
+        Me.waittime.TabIndex = 11
+        Me.waittime.Text = "25"
+        Me.waittime.Visible = False
+        '
         'welcome
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(467, 355)
         Me.ControlBox = False
+        Me.Controls.Add(Me.waittime)
+        Me.Controls.Add(Me.timer)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.LinkLabel4)
         Me.Controls.Add(Me.LinkLabel3)
@@ -159,4 +191,7 @@ Partial Class welcome
     Friend WithEvents LinkLabel3 As LinkLabel
     Friend WithEvents LinkLabel4 As LinkLabel
     Friend WithEvents Label2 As Label
+    Friend WithEvents Timer1 As Timer
+    Friend WithEvents timer As Label
+    Friend WithEvents waittime As Label
 End Class

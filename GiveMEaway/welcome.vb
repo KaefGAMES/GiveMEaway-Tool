@@ -33,6 +33,12 @@
     Dim Web As New Net.WebClient()
     Private Sub welcome_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         '
+        ' Wartetezeit für den "OK" Button
+        '
+        Button1.Enabled = False
+        Timer1.Enabled = True
+        timer.Text = Val(waittime.Text)
+        '
         ' Prüft vor beginn nach vorhandenen Updates!
         '
         'TestInternetConnection()
@@ -67,7 +73,7 @@
         ' 
         If readLANG = "deDE" Then
             Label1.Text = "WILLKOMMEN"
-            changelog.Text = "Vielen Dank, dass du dich für unser kleines aber feines Tool zum Verwalten deiner GiveAway Keys entschieden hast." + vbNewLine + vbNewLine + "Dieses Tool soll dich dabei unterstützen eine Liste von deinen Keys anzufertigen, für deinen aktuellen Livestream. Das Tool befindet sich noch in Entwicklung und Feedback ist gerne gesehen." + vbNewLine + vbNewLine + "Besuche unsere Webseite für mehr Infos!" + vbNewLine + vbNewLine + "------------------------------------------------------------------------------" + vbNewLine + vbNewLine + "Changelog #8" + vbNewLine + vbNewLine + "- Es ist nun möglich, Einstellungen zur Sprache, zum Sound und später für die Anbieter/Hosts vorzunehmen." + vbNewLine + vbNewLine + "- Die 'Multiline-Key'-Funktion, funktioniert nun und lässt Keys beginnend mit einem Buchstaben (z.B. E6K732-C037-1) zu." + vbNewLine + vbNewLine + "- Die Updater-Source kann nun eingesehen werden (siehe https://github.com/KaefGAMES/GiveMEaway-Tool)" + vbNewLine + vbNewLine + "- Der Online-Versions-Check ist für diese Version kurzfristig de-aktiviert. Bitte behalte unsere Webseite im Auge um über neuere Versionen informiert zu bleiben!!!"
+            changelog.Text = "Vielen Dank, dass du dich für unser kleines aber feines Tool zum Verwalten deiner GiveAway Keys entschieden hast." + vbNewLine + vbNewLine + "Dieses Tool soll dich dabei unterstützen eine Liste von deinen Keys anzufertigen, für deinen aktuellen Livestream. Das Tool befindet sich noch In Entwicklung und Feedback ist gerne gesehen." + vbNewLine + vbNewLine + "Besuche unsere Webseite für mehr Infos!" + vbNewLine + vbNewLine + "------------------------------------------------------------------------------" + vbNewLine + vbNewLine + "Changelog #8" + vbNewLine + vbNewLine + "- Es ist nun möglich, Einstellungen zur Sprache, zum Sound und später für die Anbieter/Hosts vorzunehmen." + vbNewLine + vbNewLine + "- Die 'Multiline-Key'-Funktion, funktioniert nun und lässt Keys beginnend mit einem Buchstaben (z.B. E6K732-C037-1) zu." + vbNewLine + vbNewLine + "- Die Updater-Source kann nun eingesehen werden (siehe https://github.com/KaefGAMES/GiveMEaway-Tool)" + vbNewLine + vbNewLine + "- Der Online-Versions-Check ist für diese Version kurzfristig de-aktiviert. Bitte behalte unsere Webseite im Auge um über neuere Versionen informiert zu bleiben!!!"
         End If
         If readLANG = "enUS" Then
             Label1.Text = "WELCOME"
@@ -132,5 +138,14 @@
 
     Private Sub LinkLabel4_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel4.LinkClicked
         Process.Start("www.hitbox.tv/KaefGAMES-Entertainment")
+    End Sub
+
+    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
+        timer.Text = Val(timer.Text) - 1
+        If timer.Text = "0" Then
+            timer.Visible = False
+            Timer1.Enabled = False
+            Button1.Enabled = True
+        End If
     End Sub
 End Class

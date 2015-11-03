@@ -275,5 +275,6 @@
         ' Öffnet das Fenster für die Einstellungen
         '
         gsettings.Show()
+        Me.Close()
     End Sub
 End Class

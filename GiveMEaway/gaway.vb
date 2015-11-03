@@ -1,5 +1,4 @@
-﻿Imports System.IO
-Public Class gaway
+﻿Public Class gaway
     '                               __
     '                             .d$$b		          _..::::::.._
     '                           .' TO$;\		    .::::::::::::::.

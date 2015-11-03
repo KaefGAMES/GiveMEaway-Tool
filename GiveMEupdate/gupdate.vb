@@ -98,7 +98,7 @@
     Private Sub wc_DownloadFileCompleted(sender As Object, e As System.ComponentModel.AsyncCompletedEventArgs) Handles wc.DownloadFileCompleted
         MsgBox("Du hast jetzt die aktuellste Version von GiveMEaway. Bitte entpacke die heruntergeladene Datei in das gleiche Verzeichnis von GiveMEaway!", MsgBoxStyle.Information, "GiveMEupdate - Download abgeschlossen!")
         pbar.Value = 0
-        Cancelbtt.Enabled = False
+        cancelbtt.Enabled = False
         Downloadbtt.Enabled = True
         Me.Close()
     End Sub

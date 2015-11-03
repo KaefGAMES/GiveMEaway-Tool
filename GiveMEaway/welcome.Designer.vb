@@ -71,8 +71,11 @@ Partial Class welcome
         '
         'changelog
         '
+        Me.changelog.BackColor = System.Drawing.SystemColors.Control
+        Me.changelog.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.changelog.Location = New System.Drawing.Point(184, 71)
         Me.changelog.Name = "changelog"
+        Me.changelog.ReadOnly = True
         Me.changelog.Size = New System.Drawing.Size(265, 243)
         Me.changelog.TabIndex = 3
         Me.changelog.Text = ""
@@ -145,7 +148,7 @@ Partial Class welcome
         '
         Me.waittime.AutoSize = True
         Me.waittime.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.waittime.Location = New System.Drawing.Point(33, 300)
+        Me.waittime.Location = New System.Drawing.Point(80, 23)
         Me.waittime.Name = "waittime"
         Me.waittime.Size = New System.Drawing.Size(19, 13)
         Me.waittime.TabIndex = 11
@@ -175,6 +178,7 @@ Partial Class welcome
         Me.MinimizeBox = False
         Me.MinimumSize = New System.Drawing.Size(483, 394)
         Me.Name = "welcome"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "GiveMEwelcome"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)

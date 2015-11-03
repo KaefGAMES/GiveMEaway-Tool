@@ -140,7 +140,8 @@ Public Class gsettings
         End If
     End Sub
 
-    Private Sub playsyes_CheckedChanged(sender As Object, e As EventArgs)
+    Private Sub playsyes_CheckedChanged(sender As Object, e As EventArgs) Handles playsyes.CheckedChanged
+
         If playsyes.Checked = True Then
             playsno.Checked = False
             '
@@ -151,9 +152,11 @@ Public Class gsettings
         If playsyes.Checked = False Then
             playsno.Checked = True
         End If
+
     End Sub
 
-    Private Sub playsno_CheckedChanged(sender As Object, e As EventArgs)
+    Private Sub playsno_CheckedChanged(sender As Object, e As EventArgs) Handles playsno.CheckedChanged
+
         If playsno.Checked = True Then
             playsyes.Checked = False
             '
@@ -164,5 +167,6 @@ Public Class gsettings
         If playsno.Checked = False Then
             playsyes.Checked = True
         End If
+
     End Sub
 End Class

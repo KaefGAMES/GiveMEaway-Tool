@@ -26,14 +26,14 @@ Partial Class gsettings
         Me.save = New System.Windows.Forms.Button()
         Me.TabControl = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.playsno = New System.Windows.Forms.CheckBox()
+        Me.playsyes = New System.Windows.Forms.CheckBox()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.langEN = New System.Windows.Forms.CheckBox()
         Me.langDE = New System.Windows.Forms.CheckBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.playsyes = New System.Windows.Forms.CheckBox()
-        Me.playsno = New System.Windows.Forms.CheckBox()
         Me.TabControl.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
@@ -72,6 +72,35 @@ Partial Class gsettings
         Me.TabPage1.Size = New System.Drawing.Size(364, 206)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Sprache / Language"
+        '
+        'playsno
+        '
+        Me.playsno.AutoSize = True
+        Me.playsno.Location = New System.Drawing.Point(10, 147)
+        Me.playsno.Name = "playsno"
+        Me.playsno.Size = New System.Drawing.Size(42, 17)
+        Me.playsno.TabIndex = 5
+        Me.playsno.Text = "NO"
+        Me.playsno.UseVisualStyleBackColor = True
+        '
+        'playsyes
+        '
+        Me.playsyes.AutoSize = True
+        Me.playsyes.Location = New System.Drawing.Point(10, 123)
+        Me.playsyes.Name = "playsyes"
+        Me.playsyes.Size = New System.Drawing.Size(47, 17)
+        Me.playsyes.TabIndex = 4
+        Me.playsyes.Text = "YES"
+        Me.playsyes.UseVisualStyleBackColor = True
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(7, 98)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(38, 13)
+        Me.Label2.TabIndex = 3
+        Me.Label2.Text = "Sound"
         '
         'langEN
         '
@@ -123,35 +152,6 @@ Partial Class gsettings
         Me.TextBox2.TabIndex = 0
         Me.TextBox2.Text = "Noch nicht verfügbar!"
         Me.TextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(7, 98)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(38, 13)
-        Me.Label2.TabIndex = 3
-        Me.Label2.Text = "Sound"
-        '
-        'playsyes
-        '
-        Me.playsyes.AutoSize = True
-        Me.playsyes.Location = New System.Drawing.Point(10, 123)
-        Me.playsyes.Name = "playsyes"
-        Me.playsyes.Size = New System.Drawing.Size(47, 17)
-        Me.playsyes.TabIndex = 4
-        Me.playsyes.Text = "YES"
-        Me.playsyes.UseVisualStyleBackColor = True
-        '
-        'playsno
-        '
-        Me.playsno.AutoSize = True
-        Me.playsno.Location = New System.Drawing.Point(10, 147)
-        Me.playsno.Name = "playsno"
-        Me.playsno.Size = New System.Drawing.Size(42, 17)
-        Me.playsno.TabIndex = 5
-        Me.playsno.Text = "NO"
-        Me.playsno.UseVisualStyleBackColor = True
         '
         'gsettings
         '

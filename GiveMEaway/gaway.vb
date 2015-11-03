@@ -35,7 +35,6 @@
     ' playsound = Button der den Sound abspielt...*whoa*
     ' aviablekeys = Textbox mit allen Keys
     ' keybox = Eingabefeld für neue Keys
-    ' gawayversion = Versionsnummer welche vom Webserver überprüft wird z.B. 0.0.1, 0.0.2 usw.
     ' copytoclip = Auswahl in Zwischenablage kopieren (STRG + C)
     '
     '

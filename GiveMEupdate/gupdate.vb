@@ -39,6 +39,41 @@
     Public WithEvents wc As New Net.WebClient()
 
     Private Sub gupdate_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        '
+        ' Lädt übersetzungen
+        '
+        Dim File = Application.StartupPath + "\away.ini"
+        '
+        ' Bestimmt die Sektionen in der .ini
+        '
+        Dim Section_lang = "Language"
+        '
+        ' Bestimmt die "Unterpunkte" in der .ini
+        '
+        Dim lang = "lang"
+        '
+        ' Übersetzungen
+        '
+        '
+        ' Liest die Ini /// Unterpunkte beachten
+        '
+        '
+        ' 1) Sprache auslesen
+        '
+        Dim readLANG = ReadIni(File, Section_lang, lang, "")
+        '
+        ' 2) Übersetzungen anwenden
+        ' 
+        If readLANG = "deDE" Then
+            Downloadbtt.Text = "Download starten"
+            cancelbtt.Text = "Download abbrechen"
+            Label2.Text = "Weil's so einfach sein kann..."
+        End If
+        If readLANG = "enUS" Then
+            Downloadbtt.Text = "Begin download"
+            cancelbtt.Text = "End download"
+            Label2.Text = "'cause it can be so easy..."
+        End If
         cancelbtt.Enabled = False
     End Sub
     '

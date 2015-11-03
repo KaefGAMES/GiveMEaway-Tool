@@ -152,45 +152,6 @@
         aviablekeys.Items.AddRange(loadlist)
         loadfileforlist.Close()
     End Sub
-    Function TestInternetConnection()
-
-        Dim ping As New Net.NetworkInformation.Ping
-
-        Try
-            ping.Send("google.de")
-            Return True
-        Catch ex As Exception
-            Return True
-        End Try
-    End Function
-
-    Sub RunUpdate()
-        If TestInternetConnection() = True Then
-            Try
-                Dim version As Integer = Web.DownloadString(New Uri(versionURL))
-
-                If version = CInt(gawayversion) Then
-                    ' do nothing
-                End If
-                If version < CInt(gawayversion) Then
-                    ' do nothing
-                End If
-                ' Versionscheck für GiveMEupdate.exe
-                If version > CInt(gawayversion) Then
-                    Try
-                        ' Wenn neue Version verfügbar, dann hinweis anzeigen, Updater starten und Fenster schließen!
-                        MsgBox("Eine neue Version von GiveMEaway ist verfügbar!", MsgBoxStyle.Information, "GiveMEAway - Ein Update ist verfügbar!")
-                        Process.Start("GiveMEupdate.exe")
-                        Me.Close()
-                    Catch ex As Exception
-                        MsgBox(ex.ToString)
-                    End Try
-                End If
-            Catch ex As Exception
-                MsgBox(ex.ToString)
-            End Try
-        End If
-    End Sub
     '
     ' Fügt eine neue Zeile zur Liste hinzu.
     '

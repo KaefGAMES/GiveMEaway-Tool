@@ -30,7 +30,6 @@ Partial Class gaway
         Me.addkey = New System.Windows.Forms.Button()
         Me.avkeystxt = New System.Windows.Forms.Label()
         Me.remkey = New System.Windows.Forms.Button()
-        Me.version = New System.Windows.Forms.Label()
         Me.aviablekeys = New System.Windows.Forms.ListBox()
         Me.clearlist = New System.Windows.Forms.Button()
         Me.copytoclip = New System.Windows.Forms.Button()
@@ -102,15 +101,6 @@ Partial Class gaway
         Me.remkey.Text = "Key entfernen"
         Me.remkeytooltip.SetToolTip(Me.remkey, "Entfernt die aktuelle Auswahl aus der Liste und aus der Keys.txt")
         Me.remkey.UseVisualStyleBackColor = True
-        '
-        'version
-        '
-        Me.version.AutoSize = True
-        Me.version.Location = New System.Drawing.Point(265, 152)
-        Me.version.Name = "version"
-        Me.version.Size = New System.Drawing.Size(154, 13)
-        Me.version.TabIndex = 11
-        Me.version.Text = "Version 0.0.8 - Stable Any CPU"
         '
         'aviablekeys
         '
@@ -217,7 +207,6 @@ Partial Class gaway
         Me.Controls.Add(Me.copytoclip)
         Me.Controls.Add(Me.clearlist)
         Me.Controls.Add(Me.aviablekeys)
-        Me.Controls.Add(Me.version)
         Me.Controls.Add(Me.remkey)
         Me.Controls.Add(Me.avkeystxt)
         Me.Controls.Add(Me.addkey)
@@ -242,7 +231,6 @@ Partial Class gaway
     Friend WithEvents addkey As Button
     Friend WithEvents avkeystxt As Label
     Friend WithEvents remkey As Button
-    Friend WithEvents version As Label
     Friend WithEvents aviablekeys As ListBox
     Friend WithEvents clearlist As Button
     Friend WithEvents copytoclip As Button

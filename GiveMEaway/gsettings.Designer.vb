@@ -136,7 +136,7 @@ Partial Class gsettings
         'playsyes
         '
         Me.playsyes.AutoSize = True
-        Me.playsyes.Location = New System.Drawing.Point(10, 123)
+        Me.playsyes.Location = New System.Drawing.Point(10, 122)
         Me.playsyes.Name = "playsyes"
         Me.playsyes.Size = New System.Drawing.Size(47, 17)
         Me.playsyes.TabIndex = 4

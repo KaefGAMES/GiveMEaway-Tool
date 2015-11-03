@@ -27,6 +27,9 @@
     '                            ;	 Copyright 2015, All Rights reserved
     '
     '
+    ' timer = Text
+    ' clock = Prozess im Hintergrund der herunterzählt
+    '
     '
     Private Const versionURL = "http://81.169.254.242/gaway/current_ver.txt"
     Dim gawayversion As String = "0.0.8"
@@ -36,7 +39,7 @@
         ' Wartetezeit für den "OK" Button
         '
         Button1.Enabled = False
-        Timer1.Enabled = True
+        clock.Enabled = True
         timer.Text = Val(waittime.Text)
         '
         ' Prüft vor beginn nach vorhandenen Updates!
@@ -150,11 +153,11 @@
         Process.Start("www.hitbox.tv/KaefGAMES-Entertainment")
     End Sub
 
-    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
+    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles clock.Tick
         timer.Text = Val(timer.Text) - 1
         If timer.Text = "0" Then
             timer.Visible = False
-            Timer1.Enabled = False
+            clock.Enabled = False
             Button1.Enabled = True
         End If
     End Sub

@@ -33,7 +33,7 @@ Partial Class welcome
         Me.LinkLabel3 = New System.Windows.Forms.LinkLabel()
         Me.LinkLabel4 = New System.Windows.Forms.LinkLabel()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.clock = New System.Windows.Forms.Timer(Me.components)
         Me.timer = New System.Windows.Forms.Label()
         Me.waittime = New System.Windows.Forms.Label()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -129,9 +129,9 @@ Partial Class welcome
         Me.Label2.TabIndex = 8
         Me.Label2.Text = "Version 0.0.8 - Stable Any CPU"
         '
-        'Timer1
+        'clock
         '
-        Me.Timer1.Interval = 1000
+        Me.clock.Interval = 1000
         '
         'timer
         '
@@ -195,7 +195,7 @@ Partial Class welcome
     Friend WithEvents LinkLabel3 As LinkLabel
     Friend WithEvents LinkLabel4 As LinkLabel
     Friend WithEvents Label2 As Label
-    Friend WithEvents Timer1 As Timer
+    Friend WithEvents clock As Timer
     Friend WithEvents timer As Label
     Friend WithEvents waittime As Label
 End Class

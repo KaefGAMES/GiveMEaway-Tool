@@ -106,10 +106,20 @@
                 ' Versionscheck für GiveMEupdate.exe
                 If version > CInt(gawayversion) Then
                     Try
+                        Dim readLANG = ReadIni(File, Section_lang, lang, "")
                         ' Wenn neue Version verfügbar, dann hinweis anzeigen, Updater starten und Fenster schließen!
-                        MsgBox("Eine neue Version von GiveMEaway ist verfügbar!", MsgBoxStyle.Information, "GiveMEAway - Ein Update ist verfügbar!")
-                        Process.Start("GiveMEupdate.exe")
-                        Me.Close()
+                        If readLANG = "deDE" Then
+                            MsgBox("Eine neue Version von GiveMEaway ist verfügbar!", MsgBoxStyle.Information, "GiveMEAway - Ein Update ist verfügbar!")
+                            Process.Start("GiveMEupdate.exe")
+                            Me.Close()
+                            Exit Sub
+                        End If
+                        If readLANG = "enUS" Then
+                            MsgBox("There's a new Version of GiveMEaway available!", MsgBoxStyle.Information, "GiveMEAway - An Update is available!")
+                            Process.Start("GiveMEupdate.exe")
+                            Me.Close()
+                            Exit Sub
+                        End If
                     Catch ex As Exception
                         MsgBox(ex.ToString)
                     End Try

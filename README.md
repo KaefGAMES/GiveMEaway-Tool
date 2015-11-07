@@ -1,11 +1,11 @@
-# GiveMEaway-Tool by KaefGAMES-Entertainment
-Hilft ggf. Streamern eines Tages dabei, Ihre GiveAways zu organisieren. 
-Funktioniert auf hitbox.tv und auf twitch.tv gleichermaßen...welch Revolution. :D
+# ![GiveMEaway-Tool](http://edge.sf.hitbox.tv/static/img/channel/givemeawaybanner-png_56363bc061c87.png)
+    Hilft ggf. Streamern eines Tages dabei, Ihre GiveAways zu organisieren. 
+    Funktioniert auf hitbox.tv und auf twitch.tv gleichermaßen...welch Revolution. :D
 
-Offizieller Stream:
-hitbox.tv/kaefgames-entertainment
+    Offizieller Stream:
+    hitbox.tv/kaefgames-entertainment
 
-www.käfgames.de
+    www.käfgames.de
 
 # Warum Visual Basic?
 Visual Basic hat es bereits im Namen. Es ist die Basis der Basis, einfach zu lernen und zu verstehen. Man braucht nur ein wenig Zeit, Geduld und kann sofort damit loslegen. Für andere Scriptsprachen bräuchten der Großteil aller Nutzer ggf. Jahre um diese im Ansatz zu verstehen. Visual Basic bietet somit also eine sichere Umgebung, auch für Anfänger.

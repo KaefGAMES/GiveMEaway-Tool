@@ -11,12 +11,13 @@
 Visual Basic hat es bereits im Namen. Es ist die Basis der Basis, einfach zu lernen und zu verstehen. Man braucht nur ein wenig Zeit, Geduld und kann sofort damit loslegen. Für andere Scriptsprachen bräuchten der Großteil aller Nutzer ggf. Jahre um diese im Ansatz zu verstehen. Visual Basic bietet somit also eine sichere Umgebung, auch für Anfänger.
 
 # Was kann das Tool bisher?
-- Neue Keys hinzufügen und speichern in einer geordneten Liste von Oben nach Unten.
-- Bereits vorhandene Keys aus der "keys.txt" beim Starten auslesen und diese anzeigen...immerhin! :)
-- Einen vom Nutzer festgelegten Sound abspielen. Hey! So könnt Ihr wenigstens die Giveaways noch Musikalisch untermauern...
-- "Multiline-Key-Adding" also das hinzufügen mehrerer Keys mit einem Klick.
-- Ein Auto-Updater um das Programm auch für Nicht-Programmierer immer aktuell zu halten.
-- _und vieles mehr_
+- [x] Neue Keys hinzufügen und speichern in einer geordneten Liste von Oben nach Unten.
+- [x] Bereits vorhandene Keys aus der "keys.txt" beim Starten auslesen und diese anzeigen...immerhin! :)
+- [x] Einen vom Nutzer festgelegten Sound abspielen. Hey! So könnt Ihr wenigstens die Giveaways noch Musikalisch untermauern...
+- [x] "Multiline-Key-Adding" also das hinzufügen mehrerer Keys mit einem Klick.
+- [x] Ein Auto-Updater um das Programm auch für Nicht-Programmierer immer aktuell zu halten.
+
+_und vieles mehr_
 
 # Was ist geplant?
 - Weiteres...Vielleicht kommen ja nach und nach mal Vorschläge für Features dazu! :)

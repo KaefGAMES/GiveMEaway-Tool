@@ -127,7 +127,7 @@ Partial Class welcome
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(163, 13)
         Me.Label2.TabIndex = 8
-        Me.Label2.Text = "Version 0.0.8.1 - Stable Any CPU"
+        Me.Label2.Text = "Version 0.0.8.2 - Stable Any CPU"
         '
         'clock
         '

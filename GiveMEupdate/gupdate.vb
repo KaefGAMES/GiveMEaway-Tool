@@ -97,11 +97,24 @@
         pbar.Value = e.ProgressPercentage
     End Sub
     Private Sub wc_DownloadFileCompleted(sender As Object, e As System.ComponentModel.AsyncCompletedEventArgs) Handles wc.DownloadFileCompleted
-        MsgBox("Du hast jetzt die aktuellste Version von GiveMEaway. Bitte entpacke die heruntergeladene Datei in das gleiche Verzeichnis von GiveMEaway!", MsgBoxStyle.Information, "GiveMEupdate - Download abgeschlossen!")
-        pbar.Value = 0
-        cancelbtt.Enabled = False
-        Downloadbtt.Enabled = True
-        Me.Close()
+        Dim readLANG = ReadIni(File, Section_lang, lang, "")
+
+        If readLANG = "deDE" Then
+            MsgBox("Du hast jetzt die aktuellste Version von GiveMEaway. Bitte entpacke die heruntergeladene Datei in das gleiche Verzeichnis von GiveMEaway!", MsgBoxStyle.Information, "GiveMEupdate - Download abgeschlossen!")
+            pbar.Value = 0
+            cancelbtt.Enabled = False
+            Downloadbtt.Enabled = True
+            Me.Close()
+            Exit Sub
+        End If
+        If readLANG = "enUS" Then
+            MsgBox("You know have the latest Version of GiveMEaway. Please unrar/unzip it into the same directory of GiveMEaway!", MsgBoxStyle.Information, "GiveMEupdate - Download completed!")
+            pbar.Value = 0
+            cancelbtt.Enabled = False
+            Downloadbtt.Enabled = True
+            Me.Close()
+            Exit Sub
+        End If
     End Sub
     '
     '

@@ -36,22 +36,22 @@
     ' pbar = Progress Bar
     ' dpfad = Downloadpfad wird beim Start ausgewählt + Ist nicht sichtbar (Ändernbutton vllt. später)
     '
+    '
+    ' Lädt übersetzungen
+    '
+    Dim File = Application.StartupPath + "\away.ini"
+    '
+    ' Bestimmt die Sektionen in der .ini
+    '
+    Dim Section_lang = "Language"
+    '
+    ' Bestimmt die "Unterpunkte" in der .ini
+    '
+    Dim lang = "lang"
+    '
     Public WithEvents wc As New Net.WebClient()
 
     Private Sub gupdate_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        '
-        ' Lädt übersetzungen
-        '
-        Dim File = Application.StartupPath + "\away.ini"
-        '
-        ' Bestimmt die Sektionen in der .ini
-        '
-        Dim Section_lang = "Language"
-        '
-        ' Bestimmt die "Unterpunkte" in der .ini
-        '
-        Dim lang = "lang"
-        '
         ' Übersetzungen
         '
         '

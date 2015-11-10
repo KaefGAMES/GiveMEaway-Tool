@@ -31,8 +31,8 @@
     ' clock = Prozess im Hintergrund der herunterzählt
     '
     '
-    Private Const versionURL = "http://81.169.254.242/gaway/current_ver.txt"
-    Dim gawayversion As String = "0.0.8"
+    Private Const versionURL = "https://dl.dropboxusercontent.com/u/29682978/GiveMEaway/current_ver.txt"
+    Dim gawayversion As String = "0.0.8.1"
     Dim Web As New Net.WebClient()
     '
     ' Lädt übersetzungen
@@ -56,8 +56,8 @@
         '
         ' Prüft vor beginn nach vorhandenen Updates!
         '
-        'TestInternetConnection()
-        'RunUpdate()
+        TestInternetConnection()
+        RunUpdate()
         '
         ' Startet normal weiter, wenn keine Updates vorhanden sind
         '

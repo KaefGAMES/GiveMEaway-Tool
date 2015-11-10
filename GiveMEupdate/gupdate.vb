@@ -28,7 +28,7 @@
     '
     ' 
     ' Url von welcher der Download stattfinden wird.
-    Private Const targetURL = "http://81.169.254.242/gaway/GiveMEaway.rar"
+    Private Const targetURL = "https://dl.dropboxusercontent.com/u/29682978/GiveMEaway/GiveMEaway.rar"
     '
     ' Deklaration
     ' Downloadbtt = Download Starten Button
@@ -82,6 +82,7 @@
     '
     Private Sub Downloadbtt_Click(sender As Object, e As EventArgs) Handles Downloadbtt.Click
         If IO.File.Exists(Environment.CurrentDirectory + "\GiveMEaway.exe") Then IO.File.Delete(Environment.CurrentDirectory + "\GiveMEaway.exe")
+        If IO.File.Exists(Environment.CurrentDirectory + "\GiveMEaway.rar") Then IO.File.Delete(Environment.CurrentDirectory + "\GiveMEaway.rar")
         wc.DownloadFileAsync(New Uri(targetURL), Environment.CurrentDirectory + "\GiveMEaway.rar")
 
         cancelbtt.Enabled = True

@@ -29,6 +29,7 @@ Public Class gsettings
     '
     '
     '
+    Dim Web As New Net.WebClient()
     Dim File = Application.StartupPath + "\away.ini"
     '
     ' Bestimmt die Sektionen in der .ini
@@ -41,6 +42,7 @@ Public Class gsettings
     '
     Dim lang = "lang"
     Dim chost = "channel_host"
+    Dim ckey = "channel_key"
     Dim psounds = "play_sounds"
     '
     '
@@ -70,8 +72,9 @@ Public Class gsettings
             Label2.Text = "Sound Einstellungen"
             playsyes.Text = "Sounds abspielen"
             playsno.Text = "Keine Sounds abspielen"
-            ' Übersetzungen // TAB ANBIETER
-            TextBox2.Text = "Noch nicht verfügbar!"
+            ' Übersetzungen // ANBIETER
+            CONNECThitbox.Text = "Verbinden"
+            CONNECTtwitch.Text = "Verbinden"
         End If
         If readLANG = "enUS" Then
             langEN.Checked = True
@@ -87,8 +90,9 @@ Public Class gsettings
             Label2.Text = "Sound Settings"
             playsyes.Text = "Play Sounds"
             playsno.Text = "Don't play Sounds"
-            ' Translations // TAB HOST
-            TextBox2.Text = "Not yet aviable!"
+            ' Translations // HOST
+            CONNECThitbox.Text = "Connect"
+            CONNECTtwitch.Text = "Connect"
         End If
         '
         ' Lese Sound-Einstellungen
@@ -167,6 +171,42 @@ Public Class gsettings
         If playsno.Checked = False Then
             playsyes.Checked = True
         End If
+
+    End Sub
+    '
+    ' Twitch.tv und hitbox.tv Einstellungen
+    '
+    Private Sub twitchbtt_Click(sender As Object, e As EventArgs) Handles twitchbtt.Click
+        apilabel.Visible = True
+        '
+        APItwitch.Visible = True
+        APIhitbox.Visible = False
+        '
+        CONNECTtwitch.Visible = True
+        CONNECThitbox.Visible = False
+        '
+        '
+        '
+        writeIni(File, Section_host, chost, "2")
+    End Sub
+
+    Private Sub hitboxbtt_Click(sender As Object, e As EventArgs) Handles hitboxbtt.Click
+        apilabel.Visible = True
+        '
+        APIhitbox.Visible = True
+        APItwitch.Visible = False
+        '
+        CONNECThitbox.Visible = True
+        CONNECTtwitch.Visible = False
+        '
+        '
+        '
+        writeIni(File, Section_host, chost, "1")
+    End Sub
+    Private Sub CONNECTtwitch_Click(sender As Object, e As EventArgs) Handles CONNECTtwitch.Click
+
+    End Sub
+    Private Sub CONNECThitbox_Click(sender As Object, e As EventArgs) Handles CONNECThitbox.Click
 
     End Sub
 End Class

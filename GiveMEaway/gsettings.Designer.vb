@@ -33,7 +33,13 @@ Partial Class gsettings
         Me.langDE = New System.Windows.Forms.CheckBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.CONNECThitbox = New System.Windows.Forms.Button()
+        Me.CONNECTtwitch = New System.Windows.Forms.Button()
+        Me.APIhitbox = New System.Windows.Forms.TextBox()
+        Me.APItwitch = New System.Windows.Forms.TextBox()
+        Me.apilabel = New System.Windows.Forms.Label()
+        Me.hitboxbtt = New System.Windows.Forms.Button()
+        Me.twitchbtt = New System.Windows.Forms.Button()
         Me.TabControl.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
@@ -133,7 +139,13 @@ Partial Class gsettings
         '
         'TabPage2
         '
-        Me.TabPage2.Controls.Add(Me.TextBox2)
+        Me.TabPage2.Controls.Add(Me.CONNECThitbox)
+        Me.TabPage2.Controls.Add(Me.CONNECTtwitch)
+        Me.TabPage2.Controls.Add(Me.APIhitbox)
+        Me.TabPage2.Controls.Add(Me.APItwitch)
+        Me.TabPage2.Controls.Add(Me.apilabel)
+        Me.TabPage2.Controls.Add(Me.hitboxbtt)
+        Me.TabPage2.Controls.Add(Me.twitchbtt)
         Me.TabPage2.Location = New System.Drawing.Point(4, 22)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
@@ -141,17 +153,74 @@ Partial Class gsettings
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Anbieter / Host"
         '
-        'TextBox2
+        'CONNECThitbox
         '
-        Me.TextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox2.Enabled = False
-        Me.TextBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox2.Location = New System.Drawing.Point(6, 86)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(351, 17)
-        Me.TextBox2.TabIndex = 0
-        Me.TextBox2.Text = "Noch nicht verfügbar!"
-        Me.TextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.CONNECThitbox.Location = New System.Drawing.Point(103, 50)
+        Me.CONNECThitbox.Name = "CONNECThitbox"
+        Me.CONNECThitbox.Size = New System.Drawing.Size(75, 23)
+        Me.CONNECThitbox.TabIndex = 6
+        Me.CONNECThitbox.Text = "Verbinden"
+        Me.CONNECThitbox.UseVisualStyleBackColor = True
+        Me.CONNECThitbox.Visible = False
+        '
+        'CONNECTtwitch
+        '
+        Me.CONNECTtwitch.Location = New System.Drawing.Point(103, 50)
+        Me.CONNECTtwitch.Name = "CONNECTtwitch"
+        Me.CONNECTtwitch.Size = New System.Drawing.Size(75, 23)
+        Me.CONNECTtwitch.TabIndex = 5
+        Me.CONNECTtwitch.Text = "Verbinden"
+        Me.CONNECTtwitch.UseVisualStyleBackColor = True
+        Me.CONNECTtwitch.Visible = False
+        '
+        'APIhitbox
+        '
+        Me.APIhitbox.Location = New System.Drawing.Point(103, 23)
+        Me.APIhitbox.Name = "APIhitbox"
+        Me.APIhitbox.Size = New System.Drawing.Size(255, 20)
+        Me.APIhitbox.TabIndex = 4
+        Me.APIhitbox.Visible = False
+        '
+        'APItwitch
+        '
+        Me.APItwitch.Location = New System.Drawing.Point(103, 23)
+        Me.APItwitch.Name = "APItwitch"
+        Me.APItwitch.Size = New System.Drawing.Size(255, 20)
+        Me.APItwitch.TabIndex = 3
+        Me.APItwitch.Visible = False
+        '
+        'apilabel
+        '
+        Me.apilabel.AutoSize = True
+        Me.apilabel.Location = New System.Drawing.Point(100, 7)
+        Me.apilabel.Name = "apilabel"
+        Me.apilabel.Size = New System.Drawing.Size(48, 13)
+        Me.apilabel.TabIndex = 2
+        Me.apilabel.Text = "API-KEY"
+        Me.apilabel.Visible = False
+        '
+        'hitboxbtt
+        '
+        Me.hitboxbtt.BackgroundImage = CType(resources.GetObject("hitboxbtt.BackgroundImage"), System.Drawing.Image)
+        Me.hitboxbtt.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.hitboxbtt.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.hitboxbtt.Location = New System.Drawing.Point(6, 75)
+        Me.hitboxbtt.Name = "hitboxbtt"
+        Me.hitboxbtt.Size = New System.Drawing.Size(63, 63)
+        Me.hitboxbtt.TabIndex = 1
+        Me.hitboxbtt.UseVisualStyleBackColor = True
+        '
+        'twitchbtt
+        '
+        Me.twitchbtt.BackgroundImage = CType(resources.GetObject("twitchbtt.BackgroundImage"), System.Drawing.Image)
+        Me.twitchbtt.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.twitchbtt.Enabled = False
+        Me.twitchbtt.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.twitchbtt.Location = New System.Drawing.Point(6, 6)
+        Me.twitchbtt.Name = "twitchbtt"
+        Me.twitchbtt.Size = New System.Drawing.Size(63, 63)
+        Me.twitchbtt.TabIndex = 0
+        Me.twitchbtt.UseVisualStyleBackColor = True
         '
         'gsettings
         '
@@ -183,8 +252,14 @@ Partial Class gsettings
     Friend WithEvents Label1 As Label
     Friend WithEvents langEN As CheckBox
     Friend WithEvents langDE As CheckBox
-    Friend WithEvents TextBox2 As TextBox
     Friend WithEvents Label2 As Label
     Friend WithEvents playsyes As CheckBox
     Friend WithEvents playsno As CheckBox
+    Friend WithEvents twitchbtt As Button
+    Friend WithEvents hitboxbtt As Button
+    Friend WithEvents apilabel As Label
+    Friend WithEvents APItwitch As TextBox
+    Friend WithEvents APIhitbox As TextBox
+    Friend WithEvents CONNECThitbox As Button
+    Friend WithEvents CONNECTtwitch As Button
 End Class

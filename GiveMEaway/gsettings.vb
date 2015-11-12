@@ -1,5 +1,4 @@
-﻿Imports System.IO
-Public Class gsettings
+﻿Public Class gsettings
     '                               __
     '                             .d$$b		          _..::::::.._
     '                           .' TO$;\		    .::::::::::::::.
@@ -44,6 +43,12 @@ Public Class gsettings
     Dim chost = "channel_host"
     Dim ckey = "channel_key"
     Dim psounds = "play_sounds"
+    '
+    ' Dinge für die Channel-Host-Settings
+    '
+    Dim hitbox As Byte()
+    Dim twitch As Byte()
+    Dim AccessToken = ReadIni(File, Section_host, ckey, "")
     '
     '
     '

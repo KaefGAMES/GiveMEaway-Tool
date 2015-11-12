@@ -204,9 +204,9 @@ Public Class gsettings
         writeIni(File, Section_host, chost, "1")
     End Sub
     Private Sub CONNECTtwitch_Click(sender As Object, e As EventArgs) Handles CONNECTtwitch.Click
-
+        writeIni(File, Section_host, ckey, APItwitch.Text)
     End Sub
     Private Sub CONNECThitbox_Click(sender As Object, e As EventArgs) Handles CONNECThitbox.Click
-
+        writeIni(File, Section_host, ckey, APIhitbox.Text)
     End Sub
 End Class

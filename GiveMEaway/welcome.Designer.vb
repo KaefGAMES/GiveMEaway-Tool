@@ -125,9 +125,9 @@ Partial Class welcome
         Me.Label2.AutoSize = True
         Me.Label2.Location = New System.Drawing.Point(13, 329)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(163, 13)
+        Me.Label2.Size = New System.Drawing.Size(154, 13)
         Me.Label2.TabIndex = 8
-        Me.Label2.Text = "Version 0.0.8.2 - Stable Any CPU"
+        Me.Label2.Text = "Version 0.0.9 - Stable Any CPU"
         '
         'clock
         '
@@ -152,7 +152,7 @@ Partial Class welcome
         Me.waittime.Name = "waittime"
         Me.waittime.Size = New System.Drawing.Size(19, 13)
         Me.waittime.TabIndex = 11
-        Me.waittime.Text = "25"
+        Me.waittime.Text = "10"
         Me.waittime.Visible = False
         '
         'welcome

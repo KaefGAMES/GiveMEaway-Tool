@@ -45,13 +45,11 @@
     ' Bestimmt die Sektionen in der .ini
     '
     Dim Section_lang = "Language"
-    Dim Section_host = "Host"
     Dim Section_sounds = "Sounds"
     '
     ' Bestimmt die "Unterpunkte" in der .ini
     '
     Dim lang = "lang"
-    Dim chost = "channel_host"
     Dim psounds = "play_sounds"
     '
     ' Aktionen die beim Start geladen/ausgeführt werden sollen

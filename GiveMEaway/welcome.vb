@@ -32,7 +32,7 @@
     '
     '
     Private Const versionURL = "https://dl.dropboxusercontent.com/u/29682978/GiveMEaway/current_ver.txt"
-    Dim gawayversion As String = "0.0.8.2"
+    Dim gawayversion As String = "0.0.9"
     Dim Web As New Net.WebClient()
     '
     ' Lädt übersetzungen

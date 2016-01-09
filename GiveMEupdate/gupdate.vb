@@ -24,7 +24,7 @@
     '     _.                      :
     '                             ;`-
     '                            :\
-    '                            ;	 Copyright 2015, All Rights reserved
+    '                            ;	 Copyright 2016, All Rights reserved
     '
     ' 
     ' Url von welcher der Download stattfinden wird.

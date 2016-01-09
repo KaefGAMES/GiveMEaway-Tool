@@ -24,7 +24,7 @@
     '     _.                      :
     '                             ;`-
     '                            :\
-    '                            ;	 Copyright 2015, All Rights reserved
+    '                            ;	 Copyright 2016, All Rights reserved
     '
     '
     ' timer = Text
@@ -76,11 +76,11 @@
         ' 
         If readLANG = "deDE" Then
             Label1.Text = "WILLKOMMEN"
-            changelog.Text = "Vielen Dank, dass du dich für unser kleines aber feines Tool zum Verwalten deiner GiveAway Keys entschieden hast." + vbNewLine + vbNewLine + "Dieses Tool soll dich dabei unterstützen eine Liste von deinen Keys anzufertigen, für deinen aktuellen Livestream. Das Tool befindet sich noch In Entwicklung und Feedback ist gerne gesehen." + vbNewLine + vbNewLine + "Besuche unsere Webseite für mehr Infos!" + vbNewLine + vbNewLine + "------------------------------------------------------------------------------" + vbNewLine + vbNewLine + "Changelog #9" + vbNewLine + vbNewLine + "- Host-Settings entfernt (Sorry aber ich habe keinen Ansatz wie ich das Umsetzen soll...Hilfe ist erwünscht...siehe dazu Github!)" + vbNewLine + vbNewLine + "- Kleinere Bugfixes" + vbNewLine + vbNewLine + "- Wartezeit im Willkommens-Fenster von 25 Sekunden auf 10 Sekunden reduziert."
+            changelog.Text = "Vielen Dank, dass du dich für unser kleines aber feines Tool zum Verwalten deiner GiveAway Keys entschieden hast." + vbNewLine + vbNewLine + "Dieses Tool soll dich dabei unterstützen eine Liste von deinen Keys anzufertigen, für deinen aktuellen Livestream. Das Tool befindet sich noch In Entwicklung und Feedback ist gerne gesehen." + vbNewLine + vbNewLine + "Besuche unsere Webseite für mehr Infos!" + vbNewLine + vbNewLine + "------------------------------------------------------------------------------" + vbNewLine + vbNewLine + "Changelog #10" + vbNewLine + vbNewLine + "- Host-Settings hinzugefügt (Der Key kann nun, siehe Einstellungen, automatisch gepostet werden)" + vbNewLine + vbNewLine + "- Allgemeine Bugfixes"
         End If
         If readLANG = "enUS" Then
             Label1.Text = "WELCOME"
-            changelog.Text = "Thank you for choosing our small but nice tool for managing your giveaway Keys." + vbNewLine + vbNewLine + "This tool will help you to make a list of your keys for your current live stream. The tool is still in development and feedback is welcome." + vbNewLine + vbNewLine + "Visit us on our website for more informations!" + vbNewLine + vbNewLine + "------------------------------------------------------------------------------" + vbNewLine + vbNewLine + "Changelog #9" + vbNewLine + vbNewLine + "- Host-Settings removed (I'm Sorry but I have no clue how this works...Help wanted and check github if you know how to code)" + vbNewLine + vbNewLine + "- Some small bugfixes" + vbNewLine + vbNewLine + "- Welcome-Window waittime reduced to 10 seconds."
+            changelog.Text = "Thank you for choosing our small but nice tool for managing your giveaway Keys." + vbNewLine + vbNewLine + "This tool will help you to make a list of your keys for your current live stream. The tool is still in development and feedback is welcome." + vbNewLine + vbNewLine + "Visit us on our website for more informations!" + vbNewLine + vbNewLine + "------------------------------------------------------------------------------" + vbNewLine + vbNewLine + "Changelog #9" + vbNewLine + vbNewLine + "- Host-Settings re-added (Keys can now be send to the winner with the tool. Take a look into the setting window)" + vbNewLine + vbNewLine + "- Some bugfixes"
         End If
     End Sub
     Function TestInternetConnection()

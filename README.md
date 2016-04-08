@@ -3,7 +3,7 @@
     Funktioniert auf hitbox.tv und auf twitch.tv gleichermaßen...welch Revolution. :D
 
     Offizieller Stream:
-    hitbox.tv/kaefgames-entertainment
+    twitch.tv/kaefgames_entertainment
 
     www.käfgames.de
 
@@ -20,7 +20,7 @@ Visual Basic hat es bereits im Namen. Es ist die Basis der Basis, einfach zu ler
 _und vieles mehr_
 
 # Was ist geplant?
-SIEHE TODO-LISTE: https://github.com/KaefGAMES/GiveMEaway-Tool/issues/1
+Dieses Tool wird nicht länger aktiv supportet. Wir entwickeln derzeit ein neues, verbessertes Tool für unsere Netzwerkpartner.
 
 # Wozu ein Tool wenn eine Textdatei doch ausreicht?
 Also wenn deine Textdatei mit einem Klick auf einen Button auch noch Sounds abspielen kann, dann höre ich sofort auf das Tool fortzuführen...oder auch nicht...je nachdem! Mal Ehrlich...Warum nicht? Wenn es jemanden hilft die Keys ordentlich aufgelistet zu sehen und bereits vergebene Keys herauszulöschen dann tut es genau das, was es soll. Ob das nun nützlich, sinnvoll und die Welt vom Elend befreit sei mal dahingestellt. Probier es doch einfach mal aus...es ist immerhin so einfach wie es aussieht/klingt. ;)
